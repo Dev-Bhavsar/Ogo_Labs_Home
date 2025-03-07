@@ -2,3104 +2,1363 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./vars.css">
-  <link rel="stylesheet" href="./style.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>OGO LABS | Your 360° Business Growth Partner</title>
   
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.19.3/inter.min.css">
   
+  <!-- Animation Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
   <style>
-   a,
-   button,
-   input,
-   select,
-   h1,
-   h2,
-   h3,
-   h4,
-   h5,
-   * {
-       box-sizing: border-box;
-       margin: 0;
-       padding: 0;
-       border: none;
-       text-decoration: none;
-       background: none;
-   
-       -webkit-font-smoothing: antialiased;
-   }
-   
-   menu, ol, ul {
-       list-style-type: none;
-       margin: 0;
-       padding: 0;
-   }
-   </style>
-  <title>Document</title>
-</head>
-<body>
-  <div
-    style="
-      background: var(--background-primary, #0e1011);
+    :root {
+      --primary-color: #0e1011;
+      --secondary-color: #181a1b;
+      --accent-color: #4169e1;
+      --text-color: #ffffff;
+      --text-muted: rgba(255, 255, 255, 0.7);
+      --transition-speed: 0.3s;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      border: none;
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scrollbar-width: thin;
+      scrollbar-color: var(--accent-color) var(--primary-color);
+    }
+
+    body {
+      background: var(--primary-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background-color 0.3s ease;
+      position: relative;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    /* Utility Classes */
+    .container {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .py-section {
+      padding: 5rem 0;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background-color: var(--accent-color);
+      color: white;
+      font-weight: 600;
+      border-radius: 4px;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(65, 105, 225, 0.3);
+    }
+
+    /* Header Styles */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1rem 0;
+    }
+
+    header.scrolled {
+      background-color: rgba(14, 16, 17, 0.95);
+      padding: 1rem 0;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-color);
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style-type: none;
+    }
+
+    nav a {
+      color: var(--text-color);
+      font-weight: 600;
+      transition: color var(--transition-speed);
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: var(--accent-color);
+      transition: width var(--transition-speed);
+    }
+
+    nav a:hover {
+      color: var(--accent-color);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .contact-btn {
+      padding: 10px 25px;
+      background: var(--accent-color);
+      color: white;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    }
+
+    .contact-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(65, 105, 225, 0.3);
+    }
+
+    /* Mobile Menu */
+    .mobile-menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 21px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .mobile-menu-toggle span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background-color: var(--text-color);
+      border-radius: 3px;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      height: 100vh;
+      background-color: var(--primary-color);
       display: flex;
       flex-direction: column;
-      gap: 0px;
-      align-items: flex-start;
-      justify-content: flex-start;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+      transition: right 0.5s ease;
+    }
+
+    .mobile-menu.active {
+      right: 0;
+    }
+
+    .mobile-menu ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .mobile-menu li {
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+
+    .mobile-menu a {
+      color: var(--text-color);
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      min-height: 100vh;
+      padding-top: 80px;
+    }
+
+    .hero-image {
+      flex: 1;
       position: relative;
       overflow: hidden;
-    "
-  >
-    <div
-      style="
-        border-radius: 500px;
-        padding: 64px 96px 0px 96px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem;
+    }
+
+    .hero-title {
+      font-size: 5rem;
+      font-weight: 200;
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 2rem;
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-cta {
+      margin-top: 2rem;
+    }
+
+    /* Services Section */
+    .services {
+      background-color: var(--secondary-color);
+      padding: 5rem 0;
+    }
+
+    .section-title {
+      font-size: 3.5rem;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-subtitle {
+      font-size: 1.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      background-color: var(--primary-color);
+      border-radius: 8px;
+      padding: 2rem;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+      height: 100%;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .service-title {
+      font-size: 1.75rem;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .service-description {
+      margin-bottom: 1.5rem;
+    }
+
+    .service-list {
+      list-style-type: none;
+    }
+
+    .service-list li {
+      margin-bottom: 0.5rem;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .service-list li::before {
+      content: "•";
+      color: var(--accent-color);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    /* Testimonials Section */
+    .testimonials {
+      padding: 5rem 0;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .testimonial-card {
+      background-color: var(--secondary-color);
+      border-radius: 8px;
+      padding: 2rem;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+      height: 100%;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .testimonial-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--accent-color);
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+
+    .testimonial-client {
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* About Section */
+    .about {
+      background-color: var(--secondary-color);
+      padding: 5rem 0;
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-text {
+      padding-right: 2rem;
+    }
+
+    .about-image {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--primary-color);
+      padding: 5rem 0 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-column h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-links {
+      list-style-type: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      transition: color var(--transition-speed);
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-color);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-icons a {
+      color: var(--text-muted);
+      font-size: 1.5rem;
+      transition: color var(--transition-speed), transform var(--transition-speed);
+    }
+
+    .social-icons a:hover {
+      color: var(--accent-color);
+      transform: translateY(-3px);
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background-color: var(--accent-color);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+      z-index: 99;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(65, 105, 225, 0.3);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+      .hero-title {
+        font-size: 4rem;
+      }
+      
+      .section-title {
+        font-size: 3rem;
+      }
+    }
+
+    @media (max-width: 992px) {
+      nav ul {
+        display: none;
+      }
+      
+      .mobile-menu-toggle {
         display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        flex-shrink: 0;
-        width: 960px;
-        position: absolute;
-        right: 0px;
-        top: 0px;
-      "
-    >
-      <div
-        style="
-          display: flex;
-          flex-direction: row;
-          gap: 12px;
-          align-items: center;
-          justify-content: flex-start;
-          align-self: stretch;
-          flex-shrink: 0;
-          position: relative;
-        "
-      >
-        <div
-          style="
-            display: flex;
-            flex-direction: row;
-            gap: 32px;
-            align-items: center;
-            justify-content: flex-start;
-            align-self: stretch;
-            flex-shrink: 0;
-            position: relative;
-          "
-        >
-          <div
-            style="
-              color: var(--text-inverse, #ffffff);
-              text-align: left;
-              font-family: var(
-                --components-navbar-font-family,
-                'Inter-SemiBold',
-                sans-serif
-              );
-              font-size: var(--components-navbar-font-size, 22px);
-              line-height: var(--components-navbar-line-height, 100%);
-              font-weight: var(--components-navbar-font-weight, 600);
-              position: relative;
-            "
-          >
-            Work
-          </div>
-          <div
-            style="
-              color: var(--text-inverse, #ffffff);
-              text-align: left;
-              font-family: var(
-                --components-navbar-font-family,
-                'Inter-SemiBold',
-                sans-serif
-              );
-              font-size: var(--components-navbar-font-size, 22px);
-              line-height: var(--components-navbar-line-height, 100%);
-              font-weight: var(--components-navbar-font-weight, 600);
-              position: relative;
-            "
-          >
-            Services
-          </div>
-          <div
-            style="
-              color: var(--text-inverse, #ffffff);
-              text-align: left;
-              font-family: var(
-                --components-navbar-font-family,
-                'Inter-SemiBold',
-                sans-serif
-              );
-              font-size: var(--components-navbar-font-size, 22px);
-              line-height: var(--components-navbar-line-height, 100%);
-              font-weight: var(--components-navbar-font-weight, 600);
-              position: relative;
-            "
-          >
-            About
-          </div>
-          <div
-            style="
-              color: var(--text-inverse, #ffffff);
-              text-align: left;
-              font-family: var(
-                --components-navbar-font-family,
-                'Inter-SemiBold',
-                sans-serif
-              );
-              font-size: var(--components-navbar-font-size, 22px);
-              line-height: var(--components-navbar-line-height, 100%);
-              font-weight: var(--components-navbar-font-weight, 600);
-              position: relative;
-            "
-          >
-            Blogs
-          </div>
-        </div>
-      </div>
-      <div
-        style="
-          display: flex;
-          flex-direction: column;
-          gap: 2px;
-          align-items: flex-start;
-          justify-content: center;
-          flex-shrink: 0;
-          position: relative;
-        "
-      >
-        <div
-          style="
-            color: var(--text-inverse, #ffffff);
-            text-align: left;
-            font-family: var(
-              --components-button-text-font-family,
-              'Inter-SemiBold',
-              sans-serif
-            );
-            font-size: var(--components-button-text-font-size, 22px);
-            line-height: var(--components-button-text-line-height, 100%);
-            font-weight: var(--components-button-text-font-weight, 600);
-            position: relative;
-          "
-        >
-          Let’s Talk
-        </div>
-        <div
-          style="
-            background: var(--text-inverse, #ffffff);
-            align-self: stretch;
-            flex-shrink: 0;
-            height: 2px;
-            position: relative;
-          "
-        ></div>
-      </div>
-    </div>
-    <div
-      style="
-        display: flex;
-        flex-direction: row;
-        gap: 0px;
-        align-items: flex-start;
-        justify-content: center;
-        align-self: stretch;
-        flex-shrink: 0;
-        height: 3967px;
-        position: relative;
-        overflow: hidden;
-      "
-    >
-      <div
-        style="
-          background: var(--background-primary, #0e1011);
-          flex-shrink: 0;
-          width: 960px;
-          height: 1080px;
-          position: relative;
-          overflow: hidden;
-        "
-      >
-        <img
-          class="image-38"
-          style="
-            width: 1794px;
-            height: 1196px;
-            position: absolute;
-            left: -431px;
-            top: -89px;
-            object-fit: cover;
-          "
-          src="image-380.png"
-        />
-      </div>
-      <div
-        style="
-          display: flex;
-          flex-direction: column;
-          gap: 0px;
-          align-items: flex-start;
-          justify-content: center;
-          flex-shrink: 0;
-          height: 4460px;
-          position: relative;
-        "
-      >
-        <div
-          style="
-            padding: 71px 96px 64px 96px;
-            display: flex;
-            flex-direction: column;
-            gap: 0px;
-            align-items: flex-start;
-            justify-content: flex-start;
-            flex-shrink: 0;
-            width: 960px;
-            height: 3353px;
-            position: relative;
-          "
-        >
-          <div
-            style="
-              color: var(--text-inverse, #ffffff);
-              text-align: left;
-              font-family: var(
-                --heading-medium-font-family,
-                'AntonSc-Regular',
-                sans-serif
-              );
-              font-size: var(--heading-medium-font-size, 160px);
-              line-height: var(--heading-medium-line-height, 100%);
-              font-weight: var(--heading-medium-font-weight, 400);
-              text-transform: uppercase;
-              position: relative;
-            "
-          >
-            ©ogo
-            <br />
-            labs
-          </div>
-          <div
-            style="
-              display: flex;
-              flex-direction: column;
-              gap: 32px;
-              align-items: flex-start;
-              justify-content: flex-start;
-              align-self: stretch;
-              flex-shrink: 0;
-              height: 2932px;
-              position: relative;
-            "
-          >
-            <div
-              style="
-                color: var(--text-muted, rgba(14, 16, 17, 0.6));
-                text-align: left;
-                font-family: var(
-                  --text-meta-font-family,
-                  'Gambetta-MediumItalic',
-                  sans-serif
-                );
-                font-size: var(--text-meta-font-size, 30px);
-                line-height: var(--text-meta-line-height, 100%);
-                font-weight: var(--text-meta-font-weight, 500);
-                font-style: var(--text-meta-font-style, italic);
-                position: relative;
-              "
-            >
-              (Based in Prague)
-            </div>
-            <div
-              style="
-                color: var(--text-inverse, #ffffff);
-                text-align: left;
-                font-family: var(
-                  --heading-alt-h2-font-family,
-                  'Inter-SemiBold',
-                  sans-serif
-                );
-                font-size: var(--heading-alt-h2-font-size, 48px);
-                line-height: var(--heading-alt-h2-line-height, 130%);
-                letter-spacing: var(--heading-alt-h2-letter-spacing, -0.5px);
-                font-weight: var(--heading-alt-h2-font-weight, 600);
-                position: relative;
-                align-self: stretch;
-              "
-            >
-              Your 360° Business Growth &amp; Digital Transformation Partner At
-              OGO LABS, we empower businesses with end-to-end solutions for
-              startup growth, digital transformation, and cutting-edge technology
-              implementation. Whether you’re an entrepreneur, an emerging startup,
-              or an established corporation, we provide tailored strategies to
-              help you scale, innovate, and dominate your industry.
-              <br />
-              <br />
-              One-Stop Solution for Your Business Needs
-              <br />
-              <br />
-              ✔ Business Growth &amp; Consulting
-              <br />
-              <br />
-              ✔ Digital Transformation (Web, Mobile, AI, Blockchain, E-commerce)
-              <br />
-              <br />
-              ✔ Game Development &amp; Immersive Technologies
-              <br />
-              <br />
-              ✔ IoT &amp; Hardware Innovation
-              <br />
-              <br />
-              ✔ Research &amp; Development
-              <br />
-              <br />
-              ✔ B2B &amp; B2C Solutions Tailored for You
-              <br />
-              <br />
-              ✔ Brand Identity &amp; UX/UI Design
-              <br />
-              <br />
-              ✔ Custom Technology Stack Consultation
-              <br />
-              <br />
-              Backed by Industry Leaders &amp; Agencies – Our trusted partners
-              ensure high-quality execution &amp; success-driven results.
-              <br />
-              <br />
-              Let’s Build Your Future – Contact Us Today!
-            </div>
-          </div>
-        </div>
-        <div
-          style="
-            padding: 0px 96px 191px 96px;
-            display: flex;
-            flex-direction: column;
-            gap: 128px;
-            align-items: flex-start;
-            justify-content: flex-start;
-            flex-shrink: 0;
-            width: 960px;
-            height: 1008px;
-            position: relative;
-          "
-        >
-          <div
-            style="
-              display: flex;
-              flex-direction: column;
-              gap: 32px;
-              align-items: flex-start;
-              justify-content: flex-start;
-              align-self: stretch;
-              flex-shrink: 0;
-              position: relative;
-            "
-          >
-            <div
-              style="
-                color: var(--text-inverse, #ffffff);
-                text-align: left;
-                font-family: var(
-                  --text-meta-font-family,
-                  'Gambetta-MediumItalic',
-                  sans-serif
-                );
-                font-size: var(--text-meta-font-size, 30px);
-                line-height: var(--text-meta-line-height, 100%);
-                font-weight: var(--text-meta-font-weight, 500);
-                font-style: var(--text-meta-font-style, italic);
-                position: relative;
-              "
-            >
-              (About Us)
-            </div>
-            <div
-              style="
-                display: flex;
-                flex-direction: column;
-                gap: 16px;
-                align-items: flex-start;
-                justify-content: flex-start;
-                align-self: stretch;
-                flex-shrink: 0;
-                position: relative;
-              "
-            >
-              <div
-                style="
-                  color: var(--text-inverse, #ffffff);
-                  text-align: left;
-                  font-family: var(
-                    --heading-h2-font-family,
-                    'AntonSc-Regular',
-                    sans-serif
-                  );
-                  font-size: var(--heading-h2-font-size, 80px);
-                  line-height: var(--heading-h2-line-height, 110%);
-                  font-weight: var(--heading-h2-font-weight, 400);
-                  text-transform: uppercase;
-                  position: relative;
-                  align-self: stretch;
-                "
-              >
-                Empowering Innovation, Building Success
-              </div>
-              <div
-                style="
-                  color: var(--text-inverse-muted, rgba(255, 255, 255, 0.6));
-                  text-align: left;
-                  font-family: var(
-                    --text-medium-font-family,
-                    'Inter-Regular',
-                    sans-serif
-                  );
-                  font-size: var(--text-medium-font-size, 22px);
-                  line-height: var(--text-medium-line-height, 170%);
-                  font-weight: var(--text-medium-font-weight, 400);
-                  position: relative;
-                  align-self: stretch;
-                "
-              >
-                OGO LABS is more than just a service provider—we are your
-                strategic partner in driving business excellence. Since the 2018
-                first step toward success as Phoenix Tech Solution, leading to
-                name rebranding to OgO LaBs in 2024 we have worked alongside
-                leading agencies, technology firms, and corporate innovators to
-                provide premium digital transformation solutions.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      style="
-        background: var(--background-primary, #0e1011);
-        display: flex;
+      }
+      
+      .hero {
         flex-direction: column;
-        gap: 0px;
-        align-items: flex-start;
-        justify-content: flex-start;
-        align-self: stretch;
-        flex-shrink: 0;
-        height: 5327px;
-        position: relative;
-      "
-    >
-      <div
-        style="
-          background: var(--background-primary, #0e1011);
-          padding: 0px 96px 96px 96px;
-          display: flex;
-          flex-direction: column;
-          gap: 96px;
-          align-items: flex-start;
-          justify-content: flex-start;
-          align-self: stretch;
-          flex-shrink: 0;
-          position: relative;
-        "
-      >
-        <div
-          style="
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
-            align-items: flex-start;
-            justify-content: flex-start;
-            align-self: stretch;
-            flex-shrink: 0;
-            height: 32px;
-            position: relative;
-          "
-        ></div>
-        <div
-          style="
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            align-items: flex-start;
-            justify-content: flex-start;
-            align-self: stretch;
-            flex-shrink: 0;
-            position: relative;
-          "
-        >
-          <div
-            style="
-              color: var(--text-inverse, #ffffff);
-              text-align: left;
-              font-family: var(
-                --heading-xxlarge-font-family,
-                'AntonSc-Regular',
-                sans-serif
-              );
-              font-size: var(--heading-xxlarge-font-size, 320px);
-              line-height: var(--heading-xxlarge-line-height, 100%);
-              font-weight: var(--heading-xxlarge-font-weight, 400);
-              text-transform: uppercase;
-              position: relative;
-              align-self: stretch;
-            "
-          >
-            Services
-          </div>
-          <div
-            style="
-              color: var(--text-inverse, #ffffff);
-              text-align: left;
-              font-family: var(
-                --heading-alt-small-font-family,
-                'Inter-SemiBold',
-                sans-serif
-              );
-              font-size: var(--heading-alt-small-font-size, 80px);
-              line-height: var(--heading-alt-small-line-height, 120%);
-              letter-spacing: var(--heading-alt-small-letter-spacing, -2px);
-              font-weight: var(--heading-alt-small-font-weight, 600);
-              position: relative;
-              width: 1400px;
-            "
-          >
-            Discover our tailored services designed to elevate your brand, enhance
-            user experience.
-          </div>
-        </div>
-      </div>
-      <div
-        style="
-          display: flex;
-          flex-direction: column;
-          gap: 0px;
-          align-items: flex-start;
-          justify-content: flex-start;
-          align-self: stretch;
-          flex-shrink: 0;
-          height: 3240px;
-          position: relative;
-        "
-      >
-        <div
-          style="
-            background: var(--background-inverse-muted, #181a1b);
-            display: flex;
-            flex-direction: row;
-            gap: 0px;
-            align-items: flex-start;
-            justify-content: center;
-            align-self: stretch;
-            flex-shrink: 0;
-            height: 1756px;
-            position: relative;
-            overflow: hidden;
-          "
-        >
-          <div
-            style="
-              flex-shrink: 0;
-              width: 800px;
-              height: 1080px;
-              position: relative;
-              overflow: hidden;
-            "
-          >
-            <img
-              class="image"
-              style="
-                width: 900px;
-                height: 1125px;
-                position: absolute;
-                left: 50%;
-                translate: -50%;
-                top: calc(50% - 575px);
-                object-fit: cover;
-              "
-              src="image0.png"
-            />
-          </div>
-          <div
-            style="
-              padding: 128px;
-              display: flex;
-              flex-direction: column;
-              align-items: flex-start;
-              justify-content: space-between;
-              align-self: stretch;
-              flex: 1;
-              position: relative;
-            "
-          >
-            <div
-              style="
-                display: flex;
-                flex-direction: column;
-                gap: 16px;
-                align-items: flex-start;
-                justify-content: flex-start;
-                align-self: stretch;
-                flex-shrink: 0;
-                position: relative;
-              "
-            >
-              <div
-                style="
-                  color: var(--text-inverse, #ffffff);
-                  text-align: left;
-                  font-family: var(
-                    --heading-small-font-family,
-                    'AntonSc-Regular',
-                    sans-serif
-                  );
-                  font-size: var(--heading-small-font-size, 128px);
-                  line-height: var(--heading-small-line-height, 100%);
-                  font-weight: var(--heading-small-font-weight, 400);
-                  text-transform: uppercase;
-                  position: relative;
-                  align-self: stretch;
-                "
-              >
-                Business Growth &amp; Consulting
-              </div>
-              <img
-                class="material-symbols-arrow-forward-rounded"
-                style="
-                  flex-shrink: 0;
-                  width: 24px;
-                  height: 24px;
-                  position: relative;
-                  overflow: visible;
-                "
-                src="material-symbols-arrow-forward-rounded0.svg"
-              />
-              <div
-                style="
-                  color: var(--text-inverse, #ffffff);
-                  text-align: left;
-                  font-family: var(
-                    --heading-alt-h3-font-family,
-                    'Inter-SemiBold',
-                    sans-serif
-                  );
-                  font-size: var(--heading-alt-h3-font-size, 40px);
-                  line-height: var(--heading-alt-h3-line-height, 140%);
-                  letter-spacing: var(--heading-alt-h3-letter-spacing, -1px);
-                  font-weight: var(--heading-alt-h3-font-weight, 600);
-                  position: relative;
-                  width: 800px;
-                "
-              >
-                Helping businesses scale and succeed through expert guidance and
-                innovative strategies. We partner with startups and established
-                companies to validate ideas, optimize operations, and build strong
-                market identities for sustainable growth.
-                <br />
-                <br />
-                Startup Consulting
-                <br />
-                <br />
-                Corporate Digitalization
-                <br />
-                <br />
-                Market Strategy &amp; Branding
-                <br />
-                <br />
-                Product Design &amp; Development
-                <br />
-                <br />
-                E-commerce Platform Development
-                <br />
-                <br />
-                Custom Logo &amp; Brand Identity Design
-                <br />
-                <br />
-                Technology Stack Consultation &amp; Development
-                <br />
-              </div>
-              <div
-                style="
-                  background: #d9d9d9;
-                  border-radius: 50%;
-                  flex-shrink: 0;
-                  width: 22px;
-                  height: 1px;
-                  position: relative;
-                "
-              ></div>
-            </div>
-          </div>
-        </div>
-        <div
-          style="
-            background: var(--background-primary, #0e1011);
-            display: flex;
-            flex-direction: row;
-            gap: 0px;
-            align-items: flex-start;
-            justify-content: center;
-            align-self: stretch;
-            flex-shrink: 0;
-            height: 1218px;
-            position: relative;
-            overflow: hidden;
-          "
-        >
-          <div
-            style="
-              padding: 128px;
-              display: flex;
-              flex-direction: column;
-              align-items: flex-start;
-              justify-content: space-between;
-              align-self: stretch;
-              flex: 1;
-              position: relative;
-            "
-          >
-            <div
-              style="
-                display: flex;
-                flex-direction: column;
-                gap: 16px;
-                align-items: flex-start;
-                justify-content: flex-start;
-                align-self: stretch;
-                flex-shrink: 0;
-                position: relative;
-              "
-            >
-              <div
-                style="
-                  color: var(--text-inverse, #ffffff);
-                  text-align: left;
-                  font-family: var(
-                    --heading-small-font-family,
-                    'AntonSc-Regular',
-                    sans-serif
-                  );
-                  font-size: var(--heading-small-font-size, 128px);
-                  line-height: var(--heading-small-line-height, 100%);
-                  font-weight: var(--heading-small-font-weight, 400);
-                  text-transform: uppercase;
-                  position: relative;
-                  align-self: stretch;
-                "
-              >
-                Digital Transformation &amp; Web Solutions
-              </div>
-              <div
-                style="
-                  color: var(--text-inverse, #ffffff);
-                  text-align: left;
-                  font-family: var(
-                    --heading-alt-h3-font-family,
-                    'Inter-SemiBold',
-                    sans-serif
-                  );
-                  font-size: var(--heading-alt-h3-font-size, 40px);
-                  line-height: var(--heading-alt-h3-line-height, 140%);
-                  letter-spacing: var(--heading-alt-h3-letter-spacing, -1px);
-                  font-weight: var(--heading-alt-h3-font-weight, 600);
-                  position: relative;
-                  width: 800px;
-                "
-              >
-                We develop robust web and mobile solutions, integrate AI and
-                blockchain tech, and optimize digital presence to meet modern
-                consumer expectations and operational needs.
-                <br />
-                <br />
-                Website &amp; Web App Development
-                <br />
-                <br />
-                AI &amp; Automation
-                <br />
-                <br />
-                Blockchain Solutions
-              </div>
-            </div>
-          </div>
-          <div
-            style="
-              flex-shrink: 0;
-              width: 800px;
-              height: 1080px;
-              position: relative;
-              overflow: hidden;
-            "
-          >
-            <img
-              class="image2"
-              style="
-                width: 1798.56px;
-                height: 1200px;
-                position: absolute;
-                left: calc(50% - 657px);
-                top: 50%;
-                translate: 0 -50%;
-                object-fit: cover;
-              "
-              src="image1.png"
-            />
-          </div>
-        </div>
-        <div
-          style="
-            background: var(--background-inverse-muted, #181a1b);
-            display: flex;
-            flex-direction: row;
-            gap: 0px;
-            align-items: flex-start;
-            justify-content: center;
-            align-self: stretch;
-            flex-shrink: 0;
-            height: 1360px;
-            position: relative;
-            overflow: hidden;
-          "
-        >
-          <div
-            style="
-              flex-shrink: 0;
-              width: 800px;
-              height: 1080px;
-              position: relative;
-              overflow: hidden;
-            "
-          >
-            <img
-              class="image3"
-              style="
-                width: 1799px;
-                height: 1080px;
-                position: absolute;
-                left: calc(50% - 913px);
-                top: 50%;
-                translate: 0 -50%;
-                object-fit: cover;
-              "
-              src="image2.png"
-            />
-          </div>
-          <div
-            style="
-              padding: 128px;
-              display: flex;
-              flex-direction: column;
-              align-items: flex-start;
-              justify-content: space-between;
-              align-self: stretch;
-              flex: 1;
-              position: relative;
-            "
-          >
-            <div
-              style="
-                display: flex;
-                flex-direction: column;
-                gap: 16px;
-                align-items: flex-start;
-                justify-content: flex-start;
-                align-self: stretch;
-                flex-shrink: 0;
-                position: relative;
-              "
-            >
-              <div
-                style="
-                  color: var(--text-inverse, #ffffff);
-                  text-align: left;
-                  font-family: var(
-                    --heading-small-font-family,
-                    'AntonSc-Regular',
-                    sans-serif
-                  );
-                  font-size: var(--heading-small-font-size, 128px);
-                  line-height: var(--heading-small-line-height, 100%);
-                  font-weight: var(--heading-small-font-weight, 400);
-                  text-transform: uppercase;
-                  position: relative;
-                  align-self: stretch;
-                "
-              >
-                Game Development &amp; Interactive Technologies
-              </div>
-              <div
-                style="
-                  color: var(--text-inverse, #ffffff);
-                  text-align: left;
-                  font-family: var(
-                    --heading-alt-h3-font-family,
-                    'Inter-SemiBold',
-                    sans-serif
-                  );
-                  font-size: var(--heading-alt-h3-font-size, 40px);
-                  line-height: var(--heading-alt-h3-line-height, 140%);
-                  letter-spacing: var(--heading-alt-h3-letter-spacing, -1px);
-                  font-weight: var(--heading-alt-h3-font-weight, 600);
-                  position: relative;
-                  width: 800px;
-                "
-              >
-                Bringing interactive experiences to life through game design and
-                immersive technology. We build engaging games and explore frontier
-                tech like the metaverse, AR/VR, and blockchain gaming.
-                <br />
-                <br />
-                Web &amp; Mobile Game Development
-                <br />
-                <br />
-                Metaverse &amp; AR/VR Solutions
-                <br />
-                <br />
-                NFT &amp; Web3 Gaming
-                <br />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      style="
-        background: var(--background-primary, #0e1011);
-        display: flex;
-        flex-direction: row;
-        gap: 0px;
-        align-items: flex-start;
-        justify-content: center;
-        align-self: stretch;
-        flex-shrink: 0;
-        height: 1218px;
-        position: relative;
-        overflow: hidden;
-      "
-    >
-      <div
-        style="
-          padding: 128px;
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          justify-content: space-between;
-          align-self: stretch;
-          flex: 1;
-          position: relative;
-        "
-      >
-        <div
-          style="
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            align-items: flex-start;
-            justify-content: flex-start;
-            align-self: stretch;
-            flex-shrink: 0;
-            position: relative;
-          "
-        >
-          <div
-            style="
-              color: var(--text-inverse, #ffffff);
-              text-align: left;
-              font-family: var(
-                --heading-small-font-family,
-                'AntonSc-Regular',
-                sans-serif
-              );
-              font-size: var(--heading-small-font-size, 128px);
-              line-height: var(--heading-small-line-height, 100%);
-              font-weight: var(--heading-small-font-weight, 400);
-              text-transform: uppercase;
-              position: relative;
-              align-self: stretch;
-            "
-          >
-            IoT, Hardware &amp; R&amp;D Solutions
-          </div>
-          <div
-            style="
-              color: var(--text-inverse, #ffffff);
-              text-align: left;
-              font-family: var(
-                --heading-alt-h3-font-family,
-                'Inter-SemiBold',
-                sans-serif
-              );
-              font-size: var(--heading-alt-h3-font-size, 40px);
-              line-height: var(--heading-alt-h3-line-height, 140%);
-              letter-spacing: var(--heading-alt-h3-letter-spacing, -1px);
-              font-weight: var(--heading-alt-h3-font-weight, 600);
-              position: relative;
-              width: 800px;
-            "
-          >
-            Connecting the physical and digital worlds through smart devices and
-            cutting-edge hardware, while continuously innovating through research
-            and development.
-            <br />
-            <br />
-            Smart IoT Solutions
-            <br />
-            <br />
-            Custom Hardware Development
-            <br />
-            <br />
-            Research &amp; Development (R&amp;D)
-          </div>
-        </div>
-      </div>
-      <div
-        style="
-          flex-shrink: 0;
-          width: 800px;
-          height: 1080px;
-          position: relative;
-          overflow: hidden;
-        "
-      >
-        <img
-          class="image2"
-          style="
-            width: 1798.56px;
-            height: 1200px;
-            position: absolute;
-            left: calc(50% - 657px);
-            top: 50%;
-            translate: 0 -50%;
-            object-fit: cover;
-          "
-          src="image3.png"
-        />
-      </div>
-    </div>
-    <div
-      style="
-        background: var(--background-inverse-muted, #181a1b);
-        display: flex;
+      }
+      
+      .hero-image {
+        height: 50vh;
+      }
+      
+      .hero-content {
+        padding: 3rem 2rem;
+      }
+      
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .about-image {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 3rem;
+      }
+      
+      .section-title {
+        font-size: 2.5rem;
+      }
+      
+      .section-subtitle {
+        font-size: 1.2rem;
+      }
+      
+      .service-grid,
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      .footer-bottom {
         flex-direction: column;
-        gap: 0px;
-        align-items: flex-start;
-        justify-content: flex-start;
-        align-self: stretch;
-        flex-shrink: 0;
-        height: 4168px;
-        position: relative;
-      "
-    >
-      <div
-        style="
-          padding: 96px;
-          display: flex;
-          flex-direction: column;
-          gap: 96px;
-          align-items: flex-start;
-          justify-content: flex-start;
-          align-self: stretch;
-          flex-shrink: 0;
-          position: relative;
-        "
-      >
-        <div
-          style="
-            display: flex;
-            flex-direction: column;
-            gap: 0px;
-            align-items: flex-start;
-            justify-content: flex-start;
-            align-self: stretch;
-            flex-shrink: 0;
-            position: relative;
-          "
-        >
-          <div
-            style="
-              color: var(--text-inverse, #ffffff);
-              text-align: left;
-              font-family: var(
-                --heading-xxlarge-font-family,
-                'AntonSc-Regular',
-                sans-serif
-              );
-              font-size: var(--heading-xxlarge-font-size, 320px);
-              line-height: var(--heading-xxlarge-line-height, 100%);
-              font-weight: var(--heading-xxlarge-font-weight, 400);
-              text-transform: uppercase;
-              position: relative;
-              align-self: stretch;
-            "
-          >
-            Strategic Partners
-          </div>
-          <div
-            style="
-              color: var(--text-inverse, #ffffff);
-              text-align: left;
-              font-family: var(
-                --heading-alt-small-font-family,
-                'Inter-SemiBold',
-                sans-serif
-              );
-              font-size: var(--heading-alt-small-font-size, 80px);
-              line-height: var(--heading-alt-small-line-height, 120%);
-              letter-spacing: var(--heading-alt-small-letter-spacing, -2px);
-              font-weight: var(--heading-alt-small-font-weight, 600);
-              position: relative;
-              width: 1400px;
-            "
-          >
-            Our Trusted Industry Partners
-          </div>
-        </div>
-      </div>
-      <div
-        style="
-          display: flex;
-          flex-direction: column;
-          gap: 0px;
-          align-items: flex-start;
-          justify-content: flex-start;
-          align-self: stretch;
-          flex-shrink: 0;
-          position: relative;
-        "
-      >
-        <div
-          style="
-            display: flex;
-            flex-direction: row;
-            gap: 0px;
-            align-items: flex-start;
-            justify-content: flex-start;
-            align-self: stretch;
-            flex-shrink: 0;
-            position: relative;
-          "
-        >
-          <div
-            style="
-              display: flex;
-              flex-direction: column;
-              gap: 0px;
-              align-items: flex-start;
-              justify-content: center;
-              flex-shrink: 0;
-              position: relative;
-            "
-          >
-            <div
-              style="
-                background: var(--background-primary, #0e1011);
-                flex-shrink: 0;
-                width: 960px;
-                height: 960px;
-                position: relative;
-                overflow: hidden;
-              "
-            >
-              <img
-                class="image4"
-                style="
-                  opacity: 0.7;
-                  width: 960px;
-                  height: 960px;
-                  position: absolute;
-                  left: 50%;
-                  translate: -50% -50%;
-                  top: 50%;
-                  object-fit: cover;
-                "
-                src="image4.png"
-              />
-              <div
-                style="
-                  width: 359.55px;
-                  height: 90px;
-                  position: absolute;
-                  left: 50%;
-                  translate: -50% -50%;
-                  top: 50%;
-                  overflow: hidden;
-                "
-              >
-                <img
-                  class="clip-path-group"
-                  style="
-                    height: auto;
-                    position: absolute;
-                    left: 0px;
-                    top: 0px;
-                    overflow: visible;
-                  "
-                  src="clip-path-group0.svg"
-                />
-              </div>
-            </div>
-            <div
-              style="
-                padding: 32px;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-                align-self: stretch;
-                flex-shrink: 0;
-                position: relative;
-              "
-            >
-              <div
-                style="
-                  color: var(--text-inverse, #ffffff);
-                  text-align: left;
-                  font-family: var(
-                    --heading-alt-h3-font-family,
-                    'Inter-SemiBold',
-                    sans-serif
-                  );
-                  font-size: var(--heading-alt-h3-font-size, 40px);
-                  line-height: var(--heading-alt-h3-line-height, 140%);
-                  letter-spacing: var(--heading-alt-h3-letter-spacing, -1px);
-                  font-weight: var(--heading-alt-h3-font-weight, 600);
-                  position: relative;
-                "
-              >
-                AI &amp; Automation Leaders
-              </div>
-              <div
-                style="
-                  color: var(--text-inverse-muted, rgba(255, 255, 255, 0.6));
-                  text-align: left;
-                  font-family: 'Gambetta-MediumItalic', sans-serif;
-                  font-size: 32px;
-                  line-height: 100%;
-                  font-weight: 500;
-                  font-style: italic;
-                  position: relative;
-                "
-              >
-                (2024)
-              </div>
-            </div>
-          </div>
-          <div
-            style="
-              display: flex;
-              flex-direction: column;
-              gap: 0px;
-              align-items: flex-start;
-              justify-content: center;
-              flex-shrink: 0;
-              position: relative;
-            "
-          >
-            <div
-              style="
-                background: var(--background-primary, #0e1011);
-                flex-shrink: 0;
-                width: 960px;
-                height: 960px;
-                position: relative;
-                overflow: hidden;
-              "
-            >
-              <img
-                class="image5"
-                style="
-                  opacity: 0.9;
-                  width: 960px;
-                  height: 960px;
-                  position: absolute;
-                  left: 50%;
-                  translate: -50% -50%;
-                  top: 50%;
-                  object-fit: cover;
-                "
-                src="image5.png"
-              />
-              <div
-                style="
-                  width: 333px;
-                  height: 90px;
-                  position: absolute;
-                  left: 50%;
-                  translate: -50% -50%;
-                  top: 50%;
-                  overflow: hidden;
-                "
-              >
-                <img
-                  class="clip-path-group2"
-                  style="
-                    height: auto;
-                    position: absolute;
-                    left: 0px;
-                    top: 0px;
-                    overflow: visible;
-                  "
-                  src="clip-path-group1.svg"
-                />
-              </div>
-            </div>
-            <div
-              style="
-                padding: 32px;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-                align-self: stretch;
-                flex-shrink: 0;
-                position: relative;
-              "
-            >
-              <div
-                style="
-                  color: var(--text-inverse, #ffffff);
-                  text-align: left;
-                  font-family: var(
-                    --heading-alt-h3-font-family,
-                    'Inter-SemiBold',
-                    sans-serif
-                  );
-                  font-size: var(--heading-alt-h3-font-size, 40px);
-                  line-height: var(--heading-alt-h3-line-height, 140%);
-                  letter-spacing: var(--heading-alt-h3-letter-spacing, -1px);
-                  font-weight: var(--heading-alt-h3-font-weight, 600);
-                  position: relative;
-                "
-              >
-                Blockchain Development Experts
-              </div>
-              <div
-                style="
-                  color: var(--text-inverse-muted, rgba(255, 255, 255, 0.6));
-                  text-align: left;
-                  font-family: 'Gambetta-MediumItalic', sans-serif;
-                  font-size: 32px;
-                  line-height: 100%;
-                  font-weight: 500;
-                  font-style: italic;
-                  position: relative;
-                "
-              >
-                (2024)
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          style="
-            display: flex;
-            flex-direction: row;
-            gap: 0px;
-            align-items: flex-start;
-            justify-content: flex-start;
-            align-self: stretch;
-            flex-shrink: 0;
-            position: relative;
-          "
-        >
-          <div
-            style="
-              display: flex;
-              flex-direction: column;
-              gap: 0px;
-              align-items: flex-start;
-              justify-content: center;
-              flex-shrink: 0;
-              position: relative;
-            "
-          >
-            <div
-              style="
-                background: var(--background-primary, #0e1011);
-                flex-shrink: 0;
-                width: 960px;
-                height: 960px;
-                position: relative;
-                overflow: hidden;
-              "
-            >
-              <img
-                class="image6"
-                style="
-                  opacity: 0.77;
-                  width: 1000px;
-                  height: 1499.82px;
-                  position: absolute;
-                  left: 50%;
-                  translate: -50% -50%;
-                  top: 50%;
-                  object-fit: cover;
-                "
-                src="image6.png"
-              />
-              <img
-                class="utosia-black-1"
-                style="
-                  width: 360.45px;
-                  height: 90px;
-                  position: absolute;
-                  left: 50%;
-                  translate: -50% -50%;
-                  top: 50%;
-                  overflow: visible;
-                "
-                src="utosia-black-10.svg"
-              />
-            </div>
-            <div
-              style="
-                padding: 32px;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-                align-self: stretch;
-                flex-shrink: 0;
-                position: relative;
-              "
-            >
-              <div
-                style="
-                  color: var(--text-inverse, #ffffff);
-                  text-align: left;
-                  font-family: var(
-                    --heading-alt-h3-font-family,
-                    'Inter-SemiBold',
-                    sans-serif
-                  );
-                  font-size: var(--heading-alt-h3-font-size, 40px);
-                  line-height: var(--heading-alt-h3-line-height, 140%);
-                  letter-spacing: var(--heading-alt-h3-letter-spacing, -1px);
-                  font-weight: var(--heading-alt-h3-font-weight, 600);
-                  position: relative;
-                "
-              >
-                E-commerce &amp; SaaS Innovators
-              </div>
-              <div
-                style="
-                  color: var(--text-inverse-muted, rgba(255, 255, 255, 0.6));
-                  text-align: left;
-                  font-family: 'Gambetta-MediumItalic', sans-serif;
-                  font-size: 32px;
-                  line-height: 100%;
-                  font-weight: 500;
-                  font-style: italic;
-                  position: relative;
-                "
-              >
-                (2024)
-              </div>
-            </div>
-          </div>
-          <div
-            style="
-              display: flex;
-              flex-direction: column;
-              gap: 0px;
-              align-items: flex-start;
-              justify-content: center;
-              flex-shrink: 0;
-              position: relative;
-            "
-          >
-            <div
-              style="
-                background: var(--background-primary, #0e1011);
-                flex-shrink: 0;
-                width: 960px;
-                height: 960px;
-                position: relative;
-                overflow: hidden;
-              "
-            >
-              <img
-                class="image4"
-                style="
-                  opacity: 0.7;
-                  width: 960px;
-                  height: 960px;
-                  position: absolute;
-                  left: 50%;
-                  translate: -50% -50%;
-                  top: 50%;
-                  object-fit: cover;
-                "
-                src="image7.png"
-              />
-              <div
-                style="
-                  width: 339.2px;
-                  height: 80px;
-                  position: absolute;
-                  left: 50%;
-                  translate: -50% -50%;
-                  top: 50%;
-                  overflow: hidden;
-                "
-              >
-                <img
-                  class="clip-path-group3"
-                  style="
-                    height: auto;
-                    position: absolute;
-                    left: 0px;
-                    top: 0px;
-                    overflow: visible;
-                  "
-                  src="clip-path-group2.svg"
-                />
-              </div>
-            </div>
-            <div
-              style="
-                padding: 32px;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-                align-self: stretch;
-                flex-shrink: 0;
-                position: relative;
-              "
-            >
-              <div
-                style="
-                  color: var(--text-inverse, #ffffff);
-                  text-align: left;
-                  font-family: var(
-                    --heading-alt-h3-font-family,
-                    'Inter-SemiBold',
-                    sans-serif
-                  );
-                  font-size: var(--heading-alt-h3-font-size, 40px);
-                  line-height: var(--heading-alt-h3-line-height, 140%);
-                  letter-spacing: var(--heading-alt-h3-letter-spacing, -1px);
-                  font-weight: var(--heading-alt-h3-font-weight, 600);
-                  position: relative;
-                "
-              >
-                UI/UX &amp; Branding Specialists
-              </div>
-              <div
-                style="
-                  color: var(--text-inverse-muted, rgba(255, 255, 255, 0.6));
-                  text-align: left;
-                  font-family: 'Gambetta-MediumItalic', sans-serif;
-                  font-size: 32px;
-                  line-height: 100%;
-                  font-weight: 500;
-                  font-style: italic;
-                  position: relative;
-                "
-              >
-                (2024)
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        style="
-          display: flex;
-          flex-direction: column;
-          gap: 0px;
-          align-items: flex-start;
-          justify-content: flex-start;
-          align-self: stretch;
-          flex-shrink: 0;
-          position: relative;
-        "
-      >
-        <div
-          style="
-            display: flex;
-            flex-direction: row;
-            gap: 0px;
-            align-items: flex-start;
-            justify-content: flex-start;
-            align-self: stretch;
-            flex-shrink: 0;
-            position: relative;
-          "
-        >
-          <div
-            style="
-              display: flex;
-              flex-direction: column;
-              gap: 0px;
-              align-items: flex-start;
-              justify-content: center;
-              flex-shrink: 0;
-              position: relative;
-            "
-          >
-            <div
-              style="
-                background: var(--background-primary, #0e1011);
-                flex-shrink: 0;
-                width: 960px;
-                height: 960px;
-                position: relative;
-                overflow: hidden;
-              "
-            >
-              <img
-                class="image4"
-                style="
-                  opacity: 0.7;
-                  width: 960px;
-                  height: 960px;
-                  position: absolute;
-                  left: 50%;
-                  translate: -50% -50%;
-                  top: 50%;
-                  object-fit: cover;
-                "
-                src="image8.png"
-              />
-              <div
-                style="
-                  width: 359.55px;
-                  height: 90px;
-                  position: absolute;
-                  left: 50%;
-                  translate: -50% -50%;
-                  top: 50%;
-                  overflow: hidden;
-                "
-              >
-                <img
-                  class="clip-path-group4"
-                  style="
-                    height: auto;
-                    position: absolute;
-                    left: 0px;
-                    top: 0px;
-                    overflow: visible;
-                  "
-                  src="clip-path-group3.svg"
-                />
-              </div>
-            </div>
-            <div
-              style="
-                padding: 32px;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-                align-self: stretch;
-                flex-shrink: 0;
-                position: relative;
-              "
-            >
-              <div
-                style="
-                  color: var(--text-inverse, #ffffff);
-                  text-align: left;
-                  font-family: var(
-                    --heading-alt-h3-font-family,
-                    'Inter-SemiBold',
-                    sans-serif
-                  );
-                  font-size: var(--heading-alt-h3-font-size, 40px);
-                  line-height: var(--heading-alt-h3-line-height, 140%);
-                  letter-spacing: var(--heading-alt-h3-letter-spacing, -1px);
-                  font-weight: var(--heading-alt-h3-font-weight, 600);
-                  position: relative;
-                "
-              >
-                Game Development &amp; Metaverse Visionaries
-              </div>
-              <div
-                style="
-                  color: var(--text-inverse-muted, rgba(255, 255, 255, 0.6));
-                  text-align: left;
-                  font-family: 'Gambetta-MediumItalic', sans-serif;
-                  font-size: 32px;
-                  line-height: 100%;
-                  font-weight: 500;
-                  font-style: italic;
-                  position: relative;
-                "
-              >
-                (2024)
-              </div>
-            </div>
-          </div>
-          <div
-            style="
-              display: flex;
-              flex-direction: column;
-              gap: 0px;
-              align-items: flex-start;
-              justify-content: center;
-              flex-shrink: 0;
-              position: relative;
-            "
-          >
-            <div
-              style="
-                background: var(--background-primary, #0e1011);
-                flex-shrink: 0;
-                width: 960px;
-                height: 960px;
-                position: relative;
-                overflow: hidden;
-              "
-            >
-              <img
-                class="image5"
-                style="
-                  opacity: 0.9;
-                  width: 960px;
-                  height: 960px;
-                  position: absolute;
-                  left: 50%;
-                  translate: -50% -50%;
-                  top: 50%;
-                  object-fit: cover;
-                "
-                src="image9.png"
-              />
-              <div
-                style="
-                  width: 333px;
-                  height: 90px;
-                  position: absolute;
-                  left: 50%;
-                  translate: -50% -50%;
-                  top: 50%;
-                  overflow: hidden;
-                "
-              >
-                <img
-                  class="clip-path-group5"
-                  style="
-                    height: auto;
-                    position: absolute;
-                    left: 0px;
-                    top: 0px;
-                    overflow: visible;
-                  "
-                  src="clip-path-group4.svg"
-                />
-              </div>
-            </div>
-            <div
-              style="
-                padding: 32px;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-                align-self: stretch;
-                flex-shrink: 0;
-                position: relative;
-              "
-            >
-              <div
-                style="
-                  color: var(--text-inverse, #ffffff);
-                  text-align: left;
-                  font-family: var(
-                    --heading-alt-h3-font-family,
-                    'Inter-SemiBold',
-                    sans-serif
-                  );
-                  font-size: var(--heading-alt-h3-font-size, 40px);
-                  line-height: var(--heading-alt-h3-line-height, 140%);
-                  letter-spacing: var(--heading-alt-h3-letter-spacing, -1px);
-                  font-weight: var(--heading-alt-h3-font-weight, 600);
-                  position: relative;
-                "
-              >
-                IoT &amp; Hardware Technology Providers
-              </div>
-              <div
-                style="
-                  color: var(--text-inverse-muted, rgba(255, 255, 255, 0.6));
-                  text-align: left;
-                  font-family: 'Gambetta-MediumItalic', sans-serif;
-                  font-size: 32px;
-                  line-height: 100%;
-                  font-weight: 500;
-                  font-style: italic;
-                  position: relative;
-                "
-              >
-                (2024)
-              </div>
-            </div>
-          </div>
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .container {
+        padding: 0 1.5rem;
+      }
+    }
+
+    /* Animation Classes */
+    .fade-in {
+      transform: translateY(20px);
+      transition: transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+      transform: translateY(0);
+    }
+
+    .slide-in-left {
+      transform: translateX(-50px);
+      transition: transform 0.8s ease;
+    }
+
+    .slide-in-left.visible {
+      transform: translateX(0);
+    }
+
+    .slide-in-right {
+      transform: translateX(50px);
+      transition: transform 0.8s ease;
+    }
+
+    .slide-in-right.visible {
+      transform: translateX(0);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header id="header">
+    <div class="container">
+      <div class="header-inner">
+        <img src="MainLogo.png" height="50px">
+        <div class="logo">OGO LABS</div>
+        <nav>
+          <ul>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#blogs">Blogs</a></li>
+          </ul>
+        </nav>
+        <a href="#contact" class="contact-btn">Let's Talk</a>
+        <div class="mobile-menu-toggle" id="mobileMenuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
     </div>
-    <div
-      style="
-        display: flex;
-        flex-direction: column;
-        gap: 0px;
-        align-items: flex-start;
-        justify-content: flex-start;
-        align-self: stretch;
-        flex-shrink: 0;
-        height: 2383px;
-        position: relative;
-      "
-    >
-      <div
-        style="
-          padding: 96px;
-          display: flex;
-          flex-direction: column;
-          gap: 96px;
-          align-items: flex-start;
-          justify-content: flex-start;
-          align-self: stretch;
-          flex-shrink: 0;
-          height: 1171px;
-          position: relative;
-        "
-      >
-        <div
-          style="
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            align-items: flex-start;
-            justify-content: flex-start;
-            align-self: stretch;
-            flex-shrink: 0;
-            height: 947px;
-            position: relative;
-          "
-        >
-          <div
-            style="
-              color: var(--text-inverse, #ffffff);
-              text-align: left;
-              font-family: var(
-                --heading-xlarge-font-family,
-                'AntonSc-Regular',
-                sans-serif
-              );
-              font-size: var(--heading-xlarge-font-size, 240px);
-              line-height: var(--heading-xlarge-line-height, 100%);
-              font-weight: var(--heading-xlarge-font-weight, 400);
-              text-transform: uppercase;
-              position: relative;
-              align-self: stretch;
-            "
-          >
-            Client Success Stories
-          </div>
-          <div
-            style="
-              color: var(--text-inverse, #ffffff);
-              text-align: left;
-              position: relative;
-              width: 1400px;
-            "
-          >
-            <span>
-              <span
-                class="transforming-businesses-driving-growth-at-ogo-labs-we-take-pride-in-delivering-high-impact-solutions-that-drive-real-world-success-here-s-how-we-ve-helped-businesses-achieve-exponential-growth-through-our-expertise-span"
-              >
-                Transforming Businesses, Driving Growth
-                <br />
-                <br />
-              </span>
-              <span
-                class="transforming-businesses-driving-growth-at-ogo-labs-we-take-pride-in-delivering-high-impact-solutions-that-drive-real-world-success-here-s-how-we-ve-helped-businesses-achieve-exponential-growth-through-our-expertise-span2"
-              >
-                At OGO LABS, we take pride in delivering high-impact solutions
-                that drive real-world success. Here’s how we’ve helped businesses
-                achieve exponential growth through our expertise:
-              </span>
-            </span>
-          </div>
-        </div>
-      </div>
-      <div
-        style="
-          display: flex;
-          flex-direction: row;
-          gap: 0px;
-          align-items: flex-start;
-          justify-content: flex-start;
-          align-self: stretch;
-          flex-shrink: 0;
-          position: relative;
-        "
-      >
-        <div
-          style="
-            display: flex;
-            flex-direction: column;
-            gap: 0px;
-            align-items: flex-start;
-            justify-content: flex-start;
-            flex: 1;
-            position: relative;
-          "
-        >
-          <div
-            style="
-              background: var(--background-inverse-muted, #181a1b);
-              padding: 80px;
-              display: flex;
-              flex-direction: column;
-              gap: 96px;
-              align-items: flex-start;
-              justify-content: center;
-              align-self: stretch;
-              flex-shrink: 0;
-              position: relative;
-            "
-          >
-            <img
-              class="div"
-              style="
-                flex-shrink: 0;
-                width: 47.36px;
-                height: 30px;
-                position: relative;
-                overflow: visible;
-              "
-              src="div0.svg"
-            />
-            <div
-              style="
-                display: flex;
-                flex-direction: column;
-                gap: 48px;
-                align-items: flex-start;
-                justify-content: flex-start;
-                align-self: stretch;
-                flex-shrink: 0;
-                position: relative;
-              "
-            >
-              <div
-                style="
-                  display: flex;
-                  flex-direction: column;
-                  gap: 16px;
-                  align-items: flex-start;
-                  justify-content: flex-start;
-                  align-self: stretch;
-                  flex-shrink: 0;
-                  position: relative;
-                "
-              >
-                <div
-                  style="
-                    color: var(--text-inverse, #ffffff);
-                    text-align: left;
-                    font-family: var(
-                      --heading-alt-h3-font-family,
-                      'Inter-SemiBold',
-                      sans-serif
-                    );
-                    font-size: var(--heading-alt-h3-font-size, 40px);
-                    line-height: var(--heading-alt-h3-line-height, 140%);
-                    letter-spacing: var(--heading-alt-h3-letter-spacing, -1px);
-                    font-weight: var(--heading-alt-h3-font-weight, 600);
-                    position: relative;
-                    align-self: stretch;
-                  "
-                >
-                  Tech Startup Accelerator – From Concept to $10M Valuation
-                </div>
-                <div
-                  style="
-                    color: var(--text-inverse-muted, rgba(255, 255, 255, 0.6));
-                    text-align: left;
-                    font-family: var(
-                      --text-default-font-family,
-                      'Inter-Regular',
-                      sans-serif
-                    );
-                    font-size: var(--text-default-font-size, 20px);
-                    line-height: var(--text-default-line-height, 180%);
-                    font-weight: var(--text-default-font-weight, 400);
-                    position: relative;
-                    align-self: stretch;
-                  "
-                >
-                  Their strategic approach completely transformed our brand. We’ve
-                  seen a huge increase in recognition and client engagement.
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            style="
-              background: var(--background-inverse-muted-2, #1f2122);
-              padding: 80px;
-              display: flex;
-              flex-direction: column;
-              gap: 96px;
-              align-items: flex-start;
-              justify-content: center;
-              align-self: stretch;
-              flex-shrink: 0;
-              position: relative;
-            "
-          >
-            <img
-              class="div2"
-              style="
-                flex-shrink: 0;
-                width: 47.36px;
-                height: 30px;
-                position: relative;
-                overflow: visible;
-              "
-              src="div1.svg"
-            />
-            <div
-              style="
-                display: flex;
-                flex-direction: column;
-                gap: 48px;
-                align-items: flex-start;
-                justify-content: flex-start;
-                align-self: stretch;
-                flex-shrink: 0;
-                position: relative;
-              "
-            >
-              <div
-                style="
-                  display: flex;
-                  flex-direction: column;
-                  gap: 16px;
-                  align-items: flex-start;
-                  justify-content: flex-start;
-                  align-self: stretch;
-                  flex-shrink: 0;
-                  position: relative;
-                "
-              >
-                <div
-                  style="
-                    color: var(--text-inverse, #ffffff);
-                    text-align: left;
-                    font-family: var(
-                      --heading-alt-h3-font-family,
-                      'Inter-SemiBold',
-                      sans-serif
-                    );
-                    font-size: var(--heading-alt-h3-font-size, 40px);
-                    line-height: var(--heading-alt-h3-line-height, 140%);
-                    letter-spacing: var(--heading-alt-h3-letter-spacing, -1px);
-                    font-weight: var(--heading-alt-h3-font-weight, 600);
-                    position: relative;
-                    align-self: stretch;
-                  "
-                >
-                  Blockchain &amp; Web3 Innovation – Powering a Decentralized
-                  Marketplace
-                </div>
-                <div
-                  style="
-                    color: var(--text-inverse-muted, rgba(255, 255, 255, 0.6));
-                    text-align: left;
-                    font-family: var(
-                      --text-default-font-family,
-                      'Inter-Regular',
-                      sans-serif
-                    );
-                    font-size: var(--text-default-font-size, 20px);
-                    line-height: var(--text-default-line-height, 180%);
-                    font-weight: var(--text-default-font-weight, 400);
-                    position: relative;
-                    align-self: stretch;
-                  "
-                >
-                  Working with them was easy and efficient. They perfectly
-                  captured our vision, and the results were outstanding.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          style="
-            display: flex;
-            flex-direction: column;
-            gap: 0px;
-            align-items: flex-start;
-            justify-content: flex-start;
-            flex: 1;
-            height: 1212px;
-            position: relative;
-          "
-        >
-          <div
-            style="
-              background: var(--background-inverse-muted-2, #1f2122);
-              padding: 80px;
-              display: flex;
-              flex-direction: column;
-              gap: 96px;
-              align-items: flex-start;
-              justify-content: center;
-              align-self: stretch;
-              flex-shrink: 0;
-              position: relative;
-            "
-          >
-            <img
-              class="div3"
-              style="
-                flex-shrink: 0;
-                width: 47.36px;
-                height: 30px;
-                position: relative;
-                overflow: visible;
-              "
-              src="div2.svg"
-            />
-            <div
-              style="
-                display: flex;
-                flex-direction: column;
-                gap: 48px;
-                align-items: flex-start;
-                justify-content: flex-start;
-                align-self: stretch;
-                flex-shrink: 0;
-                position: relative;
-              "
-            >
-              <div
-                style="
-                  display: flex;
-                  flex-direction: column;
-                  gap: 16px;
-                  align-items: flex-start;
-                  justify-content: flex-start;
-                  align-self: stretch;
-                  flex-shrink: 0;
-                  position: relative;
-                "
-              >
-                <div
-                  style="
-                    color: var(--text-inverse, #ffffff);
-                    text-align: left;
-                    font-family: var(
-                      --heading-alt-h3-font-family,
-                      'Inter-SemiBold',
-                      sans-serif
-                    );
-                    font-size: var(--heading-alt-h3-font-size, 40px);
-                    line-height: var(--heading-alt-h3-line-height, 140%);
-                    letter-spacing: var(--heading-alt-h3-letter-spacing, -1px);
-                    font-weight: var(--heading-alt-h3-font-weight, 600);
-                    position: relative;
-                    align-self: stretch;
-                  "
-                >
-                  E-Commerce Brand Revamp – Increasing Revenue by 300%
-                </div>
-                <div
-                  style="
-                    color: var(--text-inverse-muted, rgba(255, 255, 255, 0.6));
-                    text-align: left;
-                    font-family: var(
-                      --text-default-font-family,
-                      'Inter-Regular',
-                      sans-serif
-                    );
-                    font-size: var(--text-default-font-size, 20px);
-                    line-height: var(--text-default-line-height, 180%);
-                    font-weight: var(--text-default-font-weight, 400);
-                    position: relative;
-                    align-self: stretch;
-                  "
-                >
-                  The website they created is stunning, user-friendly, and has
-                  boosted our online conversions significantly. Highly recommend!
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            style="
-              background: var(--background-inverse-muted, #181a1b);
-              padding: 80px;
-              display: flex;
-              flex-direction: column;
-              gap: 96px;
-              align-items: flex-start;
-              justify-content: center;
-              align-self: stretch;
-              flex-shrink: 0;
-              height: 634px;
-              position: relative;
-            "
-          >
-            <img
-              class="div4"
-              style="
-                flex-shrink: 0;
-                width: 47.36px;
-                height: 30px;
-                position: relative;
-                overflow: visible;
-              "
-              src="div3.svg"
-            />
-            <div
-              style="
-                display: flex;
-                flex-direction: column;
-                gap: 48px;
-                align-items: flex-start;
-                justify-content: flex-start;
-                align-self: stretch;
-                flex-shrink: 0;
-                position: relative;
-              "
-            >
-              <div
-                style="
-                  display: flex;
-                  flex-direction: column;
-                  gap: 16px;
-                  align-items: flex-start;
-                  justify-content: flex-start;
-                  align-self: stretch;
-                  flex-shrink: 0;
-                  position: relative;
-                "
-              >
-                <div
-                  style="
-                    color: var(--text-inverse, #ffffff);
-                    text-align: left;
-                    font-family: var(
-                      --heading-alt-h3-font-family,
-                      'Inter-SemiBold',
-                      sans-serif
-                    );
-                    font-size: var(--heading-alt-h3-font-size, 40px);
-                    line-height: var(--heading-alt-h3-line-height, 140%);
-                    letter-spacing: var(--heading-alt-h3-letter-spacing, -1px);
-                    font-weight: var(--heading-alt-h3-font-weight, 600);
-                    position: relative;
-                    align-self: stretch;
-                  "
-                >
-                  IoT Smart Factory – Reducing Operational Costs by 40%
-                </div>
-                <div
-                  style="
-                    color: var(--text-inverse-muted, rgba(255, 255, 255, 0.6));
-                    text-align: left;
-                    font-family: var(
-                      --text-default-font-family,
-                      'Inter-Regular',
-                      sans-serif
-                    );
-                    font-size: var(--text-default-font-size, 20px);
-                    line-height: var(--text-default-line-height, 180%);
-                    font-weight: var(--text-default-font-weight, 400);
-                    position: relative;
-                    align-self: stretch;
-                  "
-                >
-                  Our new branding resonated with our audience immediately. We’ve
-                  received so many compliments and new business inquiries.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          style="
-            display: flex;
-            flex-direction: column;
-            gap: 0px;
-            align-items: flex-start;
-            justify-content: flex-start;
-            flex: 1;
-            position: relative;
-          "
-        >
-          <div
-            style="
-              background: var(--background-inverse-muted, #181a1b);
-              padding: 80px;
-              display: flex;
-              flex-direction: column;
-              gap: 96px;
-              align-items: flex-start;
-              justify-content: center;
-              align-self: stretch;
-              flex-shrink: 0;
-              position: relative;
-            "
-          >
-            <img
-              class="div5"
-              style="
-                flex-shrink: 0;
-                width: 47.36px;
-                height: 30px;
-                position: relative;
-                overflow: visible;
-              "
-              src="div4.svg"
-            />
-            <div
-              style="
-                display: flex;
-                flex-direction: column;
-                gap: 48px;
-                align-items: flex-start;
-                justify-content: flex-start;
-                align-self: stretch;
-                flex-shrink: 0;
-                position: relative;
-              "
-            >
-              <div
-                style="
-                  display: flex;
-                  flex-direction: column;
-                  gap: 16px;
-                  align-items: flex-start;
-                  justify-content: flex-start;
-                  align-self: stretch;
-                  flex-shrink: 0;
-                  position: relative;
-                "
-              >
-                <div
-                  style="
-                    color: var(--text-inverse, #ffffff);
-                    text-align: left;
-                    font-family: var(
-                      --heading-alt-h3-font-family,
-                      'Inter-SemiBold',
-                      sans-serif
-                    );
-                    font-size: var(--heading-alt-h3-font-size, 40px);
-                    line-height: var(--heading-alt-h3-line-height, 140%);
-                    letter-spacing: var(--heading-alt-h3-letter-spacing, -1px);
-                    font-weight: var(--heading-alt-h3-font-weight, 600);
-                    position: relative;
-                    align-self: stretch;
-                  "
-                >
-                  Enterprise AI Chatbot – Automating Customer Support
-                </div>
-                <div
-                  style="
-                    color: var(--text-inverse-muted, rgba(255, 255, 255, 0.6));
-                    text-align: left;
-                    font-family: var(
-                      --text-default-font-family,
-                      'Inter-Regular',
-                      sans-serif
-                    );
-                    font-size: var(--text-default-font-size, 20px);
-                    line-height: var(--text-default-line-height, 180%);
-                    font-weight: var(--text-default-font-weight, 400);
-                    position: relative;
-                    align-self: stretch;
-                  "
-                >
-                  Their designs are not only beautiful but effective. Our sales
-                  increased by 30% post-launch. Incredible experience!
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            style="
-              background: var(--background-inverse-muted-2, #1f2122);
-              padding: 80px;
-              display: flex;
-              flex-direction: column;
-              gap: 96px;
-              align-items: flex-start;
-              justify-content: center;
-              align-self: stretch;
-              flex-shrink: 0;
-              height: 633px;
-              position: relative;
-            "
-          >
-            <img
-              class="div6"
-              style="
-                flex-shrink: 0;
-                width: 47.36px;
-                height: 30px;
-                position: relative;
-                overflow: visible;
-              "
-              src="div5.svg"
-            />
-            <div
-              style="
-                display: flex;
-                flex-direction: column;
-                gap: 48px;
-                align-items: flex-start;
-                justify-content: flex-start;
-                align-self: stretch;
-                flex-shrink: 0;
-                position: relative;
-              "
-            >
-              <div
-                style="
-                  display: flex;
-                  flex-direction: column;
-                  gap: 16px;
-                  align-items: flex-start;
-                  justify-content: flex-start;
-                  align-self: stretch;
-                  flex-shrink: 0;
-                  position: relative;
-                "
-              >
-                <div
-                  style="
-                    color: var(--text-inverse, #ffffff);
-                    text-align: left;
-                    font-family: var(
-                      --heading-alt-h3-font-family,
-                      'Inter-SemiBold',
-                      sans-serif
-                    );
-                    font-size: var(--heading-alt-h3-font-size, 40px);
-                    line-height: var(--heading-alt-h3-line-height, 140%);
-                    letter-spacing: var(--heading-alt-h3-letter-spacing, -1px);
-                    font-weight: var(--heading-alt-h3-font-weight, 600);
-                    position: relative;
-                    align-self: stretch;
-                  "
-                >
-                  UX Design That Transformed Our User Experience.
-                </div>
-                <div
-                  style="
-                    color: var(--text-inverse-muted, rgba(255, 255, 255, 0.6));
-                    text-align: left;
-                    font-family: var(
-                      --text-default-font-family,
-                      'Inter-Regular',
-                      sans-serif
-                    );
-                    font-size: var(--text-default-font-size, 20px);
-                    line-height: var(--text-default-line-height, 180%);
-                    font-weight: var(--text-default-font-weight, 400);
-                    position: relative;
-                    align-self: stretch;
-                  "
-                >
-                  Their UX design made our platform more intuitive and enjoyable
-                  to use. Customer satisfaction has dramatically improved.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      style="
-        background: var(--background-default, #ffffff);
-        padding: 96px 96px 64px 96px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: space-between;
-        align-self: stretch;
-        flex-shrink: 0;
-        height: 1080px;
-        position: relative;
-      "
-    >
-      <div
-        style="
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: space-between;
-          align-self: stretch;
-          flex-shrink: 0;
-          position: relative;
-        "
-      >
-        <div
-          style="
-            color: var(--text-default, #0e1011);
-            text-align: left;
-            font-family: var(
-              --heading-xlarge-font-family,
-              'AntonSc-Regular',
-              sans-serif
-            );
-            font-size: var(--heading-xlarge-font-size, 240px);
-            line-height: var(--heading-xlarge-line-height, 100%);
-            font-weight: var(--heading-xlarge-font-weight, 400);
-            text-transform: uppercase;
-            position: relative;
-            flex: 1;
-          "
-        >
-          ogo©
-        </div>
-      </div>
-      <div
-        style="
-          display: flex;
-          flex-direction: column;
-          gap: 96px;
-          align-items: flex-start;
-          justify-content: flex-start;
-          align-self: stretch;
-          flex-shrink: 0;
-          position: relative;
-        "
-      >
-        <div
-          style="
-            display: flex;
-            flex-direction: row;
-            gap: 96px;
-            align-items: flex-start;
-            justify-content: flex-start;
-            align-self: stretch;
-            flex-shrink: 0;
-            position: relative;
-          "
-        >
-          <div
-            style="
-              display: flex;
-              flex-direction: column;
-              gap: 32px;
-              align-items: center;
-              justify-content: flex-start;
-              flex: 1;
-              position: relative;
-            "
-          >
-            <div
-              style="
-                color: var(--text-muted, rgba(14, 16, 17, 0.6));
-                text-align: left;
-                font-family: var(
-                  --text-meta-font-family,
-                  'Gambetta-MediumItalic',
-                  sans-serif
-                );
-                font-size: var(--text-meta-font-size, 30px);
-                line-height: var(--text-meta-line-height, 100%);
-                font-weight: var(--text-meta-font-weight, 500);
-                font-style: var(--text-meta-font-style, italic);
-                position: relative;
-                align-self: stretch;
-                transform-origin: 0 0;
-                transform: rotate(0deg) scale(1, 1);
-              "
-            >
-              (Pages)
-            </div>
-            <div
-              style="
-                display: flex;
-                flex-direction: column;
-                gap: 16px;
-                align-items: flex-start;
-                justify-content: flex-start;
-                align-self: stretch;
-                flex-shrink: 0;
-                position: relative;
-              "
-            >
-              <div
-                style="
-                  color: var(--text-default, #0e1011);
-                  text-align: left;
-                  font-family: var(
-                    --components-nav-font-family,
-                    'Inter-SemiBold',
-                    sans-serif
-                  );
-                  font-size: var(--components-nav-font-size, 26px);
-                  line-height: var(--components-nav-line-height, 130%);
-                  font-weight: var(--components-nav-font-weight, 600);
-                  position: relative;
-                  align-self: stretch;
-                "
-              >
-                Home
-              </div>
-              <div
-                style="
-                  color: var(--text-default, #0e1011);
-                  text-align: left;
-                  font-family: var(
-                    --components-nav-font-family,
-                    'Inter-SemiBold',
-                    sans-serif
-                  );
-                  font-size: var(--components-nav-font-size, 26px);
-                  line-height: var(--components-nav-line-height, 130%);
-                  font-weight: var(--components-nav-font-weight, 600);
-                  position: relative;
-                  align-self: stretch;
-                "
-              >
-                Service
-              </div>
-              <div
-                style="
-                  color: var(--text-default, #0e1011);
-                  text-align: left;
-                  font-family: var(
-                    --components-nav-font-family,
-                    'Inter-SemiBold',
-                    sans-serif
-                  );
-                  font-size: var(--components-nav-font-size, 26px);
-                  line-height: var(--components-nav-line-height, 130%);
-                  font-weight: var(--components-nav-font-weight, 600);
-                  position: relative;
-                  align-self: stretch;
-                "
-              >
-                Studio
-              </div>
-              <div
-                style="
-                  color: var(--text-default, #0e1011);
-                  text-align: left;
-                  font-family: var(
-                    --components-nav-font-family,
-                    'Inter-SemiBold',
-                    sans-serif
-                  );
-                  font-size: var(--components-nav-font-size, 26px);
-                  line-height: var(--components-nav-line-height, 130%);
-                  font-weight: var(--components-nav-font-weight, 600);
-                  position: relative;
-                  align-self: stretch;
-                "
-              >
-                Contact
-              </div>
-            </div>
-          </div>
-          <div
-            style="
-              display: flex;
-              flex-direction: column;
-              gap: 32px;
-              align-items: flex-start;
-              justify-content: flex-start;
-              flex: 1;
-              position: relative;
-            "
-          >
-            <div
-              style="
-                color: var(--text-muted, rgba(14, 16, 17, 0.6));
-                text-align: left;
-                font-family: var(
-                  --text-meta-font-family,
-                  'Gambetta-MediumItalic',
-                  sans-serif
-                );
-                font-size: var(--text-meta-font-size, 30px);
-                line-height: var(--text-meta-line-height, 100%);
-                font-weight: var(--text-meta-font-weight, 500);
-                font-style: var(--text-meta-font-style, italic);
-                position: relative;
-                align-self: stretch;
-                transform-origin: 0 0;
-                transform: rotate(0deg) scale(1, 1);
-              "
-            >
-              (CMS)
-            </div>
-            <div
-              style="
-                display: flex;
-                flex-direction: column;
-                gap: 16px;
-                align-items: flex-start;
-                justify-content: flex-start;
-                align-self: stretch;
-                flex-shrink: 0;
-                position: relative;
-              "
-            >
-              <div
-                style="
-                  color: var(--text-default, #0e1011);
-                  text-align: left;
-                  font-family: var(
-                    --components-nav-font-family,
-                    'Inter-SemiBold',
-                    sans-serif
-                  );
-                  font-size: var(--components-nav-font-size, 26px);
-                  line-height: var(--components-nav-line-height, 130%);
-                  font-weight: var(--components-nav-font-weight, 600);
-                  position: relative;
-                  align-self: stretch;
-                "
-              >
-                Work
-              </div>
-              <div
-                style="
-                  color: var(--text-default, #0e1011);
-                  text-align: left;
-                  font-family: var(
-                    --components-nav-font-family,
-                    'Inter-SemiBold',
-                    sans-serif
-                  );
-                  font-size: var(--components-nav-font-size, 26px);
-                  line-height: var(--components-nav-line-height, 130%);
-                  font-weight: var(--components-nav-font-weight, 600);
-                  position: relative;
-                  align-self: stretch;
-                "
-              >
-                Work Single
-              </div>
-              <div
-                style="
-                  color: var(--text-default, #0e1011);
-                  text-align: left;
-                  font-family: var(
-                    --components-nav-font-family,
-                    'Inter-SemiBold',
-                    sans-serif
-                  );
-                  font-size: var(--components-nav-font-size, 26px);
-                  line-height: var(--components-nav-line-height, 130%);
-                  font-weight: var(--components-nav-font-weight, 600);
-                  position: relative;
-                  align-self: stretch;
-                "
-              >
-                Blog
-              </div>
-              <div
-                style="
-                  color: var(--text-default, #0e1011);
-                  text-align: left;
-                  font-family: var(
-                    --components-nav-font-family,
-                    'Inter-SemiBold',
-                    sans-serif
-                  );
-                  font-size: var(--components-nav-font-size, 26px);
-                  line-height: var(--components-nav-line-height, 130%);
-                  font-weight: var(--components-nav-font-weight, 600);
-                  position: relative;
-                  align-self: stretch;
-                "
-              >
-                Blog Single
-              </div>
-            </div>
-          </div>
-          <div
-            style="
-              display: flex;
-              flex-direction: column;
-              gap: 32px;
-              align-items: flex-start;
-              justify-content: flex-start;
-              flex: 1;
-              position: relative;
-            "
-          >
-            <div
-              style="
-                color: var(--text-muted, rgba(14, 16, 17, 0.6));
-                text-align: left;
-                font-family: var(
-                  --text-meta-font-family,
-                  'Gambetta-MediumItalic',
-                  sans-serif
-                );
-                font-size: var(--text-meta-font-size, 30px);
-                line-height: var(--text-meta-line-height, 100%);
-                font-weight: var(--text-meta-font-weight, 500);
-                font-style: var(--text-meta-font-style, italic);
-                position: relative;
-                align-self: stretch;
-                transform-origin: 0 0;
-                transform: rotate(0deg) scale(1, 1);
-              "
-            >
-              (Utility Pages)
-            </div>
-            <div
-              style="
-                display: flex;
-                flex-direction: column;
-                gap: 16px;
-                align-items: flex-start;
-                justify-content: flex-start;
-                align-self: stretch;
-                flex-shrink: 0;
-                position: relative;
-              "
-            >
-              <div
-                style="
-                  color: var(--text-default, #0e1011);
-                  text-align: left;
-                  font-family: var(
-                    --components-nav-font-family,
-                    'Inter-SemiBold',
-                    sans-serif
-                  );
-                  font-size: var(--components-nav-font-size, 26px);
-                  line-height: var(--components-nav-line-height, 130%);
-                  font-weight: var(--components-nav-font-weight, 600);
-                  position: relative;
-                  align-self: stretch;
-                "
-              >
-                404
-              </div>
-              <div
-                style="
-                  color: var(--text-default, #0e1011);
-                  text-align: left;
-                  font-family: var(
-                    --components-nav-font-family,
-                    'Inter-SemiBold',
-                    sans-serif
-                  );
-                  font-size: var(--components-nav-font-size, 26px);
-                  line-height: var(--components-nav-line-height, 130%);
-                  font-weight: var(--components-nav-font-weight, 600);
-                  position: relative;
-                  align-self: stretch;
-                "
-              >
-                Licensing
-              </div>
-            </div>
-          </div>
-          <div
-            style="
-              display: flex;
-              flex-direction: column;
-              gap: 32px;
-              align-items: flex-start;
-              justify-content: flex-start;
-              flex: 1;
-              position: relative;
-            "
-          >
-            <div
-              style="
-                color: var(--text-muted, rgba(14, 16, 17, 0.6));
-                text-align: left;
-                font-family: var(
-                  --text-meta-font-family,
-                  'Gambetta-MediumItalic',
-                  sans-serif
-                );
-                font-size: var(--text-meta-font-size, 30px);
-                line-height: var(--text-meta-line-height, 100%);
-                font-weight: var(--text-meta-font-weight, 500);
-                font-style: var(--text-meta-font-style, italic);
-                position: relative;
-                align-self: stretch;
-                transform-origin: 0 0;
-                transform: rotate(0deg) scale(1, 1);
-              "
-            >
-              (Socials)
-            </div>
-            <div
-              style="
-                display: flex;
-                flex-direction: column;
-                gap: 16px;
-                align-items: flex-start;
-                justify-content: flex-start;
-                align-self: stretch;
-                flex-shrink: 0;
-                position: relative;
-              "
-            >
-              <div
-                style="
-                  color: var(--text-default, #0e1011);
-                  text-align: left;
-                  font-family: var(
-                    --components-nav-font-family,
-                    'Inter-SemiBold',
-                    sans-serif
-                  );
-                  font-size: var(--components-nav-font-size, 26px);
-                  line-height: var(--components-nav-line-height, 130%);
-                  font-weight: var(--components-nav-font-weight, 600);
-                  position: relative;
-                  align-self: stretch;
-                "
-              >
-                Instagram
-              </div>
-              <div
-                style="
-                  color: var(--text-default, #0e1011);
-                  text-align: left;
-                  font-family: var(
-                    --components-nav-font-family,
-                    'Inter-SemiBold',
-                    sans-serif
-                  );
-                  font-size: var(--components-nav-font-size, 26px);
-                  line-height: var(--components-nav-line-height, 130%);
-                  font-weight: var(--components-nav-font-weight, 600);
-                  position: relative;
-                  align-self: stretch;
-                "
-              >
-                Behance
-              </div>
-              <div
-                style="
-                  color: var(--text-default, #0e1011);
-                  text-align: left;
-                  font-family: var(
-                    --components-nav-font-family,
-                    'Inter-SemiBold',
-                    sans-serif
-                  );
-                  font-size: var(--components-nav-font-size, 26px);
-                  line-height: var(--components-nav-line-height, 130%);
-                  font-weight: var(--components-nav-font-weight, 600);
-                  position: relative;
-                  align-self: stretch;
-                "
-              >
-                Dribbble
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          style="
-            display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            justify-content: space-between;
-            align-self: stretch;
-            flex-shrink: 0;
-            position: relative;
-          "
-        >
-          <div
-            style="
-              display: flex;
-              flex-direction: column;
-              gap: 2px;
-              align-items: flex-start;
-              justify-content: center;
-              flex-shrink: 0;
-              position: relative;
-            "
-          >
-            <div
-              style="
-                color: var(--text-default, #0e1011);
-                text-align: left;
-                font-family: var(
-                  --components-button-text-font-family,
-                  'Inter-SemiBold',
-                  sans-serif
-                );
-                font-size: var(--components-button-text-font-size, 22px);
-                line-height: var(--components-button-text-line-height, 100%);
-                font-weight: var(--components-button-text-font-weight, 600);
-                position: relative;
-              "
-            >
-              By Gola Templates
-            </div>
-            <div
-              style="
-                background: var(--text-default, #0e1011);
-                align-self: stretch;
-                flex-shrink: 0;
-                height: 2px;
-                position: relative;
-              "
-            ></div>
-          </div>
-          <div
-            style="
-              display: flex;
-              flex-direction: column;
-              gap: 2px;
-              align-items: flex-start;
-              justify-content: center;
-              flex-shrink: 0;
-              position: relative;
-            "
-          >
-            <div
-              style="
-                color: var(--text-default, #0e1011);
-                text-align: left;
-                font-family: var(
-                  --components-button-text-font-family,
-                  'Inter-SemiBold',
-                  sans-serif
-                );
-                font-size: var(--components-button-text-font-size, 22px);
-                line-height: var(--components-button-text-line-height, 100%);
-                font-weight: var(--components-button-text-font-weight, 600);
-                position: relative;
-              "
-            >
-              Back to Top
-            </div>
-            <div
-              style="
-                background: var(--text-default, #0e1011);
-                align-self: stretch;
-                flex-shrink: 0;
-                height: 2px;
-                position: relative;
-              "
-            ></div>
-          </div>
-        </div>
-      </div>
-    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#work" class="mobile-link">Work</a></li>
+      <li><a href="#services" class="mobile-link">Services</a></li>
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#blogs" class="mobile-link">Blogs</a></li>
+      <li><a href="#contact" class="mobile-link">Let's Talk</a></li>
+    </ul>
   </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-image">
+      <img src="image-380.png" alt="OGO LABS Digital Transformation">
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title fade-in">©ogo <br> Labs</h1>
+      <p class="hero-description fade-in">
+        Your 360° Business Growth & Digital Transformation Partner. At OGO LABS, we empower businesses with end-to-end solutions for startup growth, digital transformation, and cutting-edge technology implementation.
+      </p>
+      <div class="hero-features fade-in">
+        <strong>One-Stop Solution for Your Business Needs</strong><br><br>
+        - Business Growth & Consulting<br>
+        - Digital Transformation (Web, Mobile, AI, Blockchain, E-commerce)<br>
+        - Game Development & Immersive Technologies<br>
+        - IoT & Hardware Innovation<br>
+        - Research & Development<br>
+        - B2B & B2C Solutions Tailored for You<br>
+        - Brand Identity & UX/UI Design<br>
+        - Custom Technology Stack Consultation<br>
+      </div>
+      <p style="margin-top: 40px;">
+        Backed by Industry Leaders & Agencies – Our trusted partners ensure high-quality execution & success-driven results.
+      </p>
+      <div class="hero-cta fade-in">
+        <a href="#contact" class="btn">Let's Build Your Future</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services py-section" id="services">
+    <div class="container">
+      <h2 class="section-title fade-in">Services</h2>
+      <p class="section-subtitle fade-in">
+        Discover our tailored services designed to elevate your brand and enhance user experience.
+      </p>
+      
+      <div class="service-grid">
+        <!-- Service 1 -->
+        <div class="service-card fade-in" data-delay="0">
+          <h3 class="service-title">Business Growth & Consulting</h3>
+          <p class="service-description">
+            Helping businesses scale and succeed through expert guidance and innovative strategies.
+          </p>
+          <ul class="service-list">
+            <li>Startup Consulting</li>
+            <li>Corporate Digitalization</li>
+            <li>Market Strategy & Branding</li>
+            <li>Product Design & Development</li>
+            <li>E-commerce Platform Development</li>
+            <li>Custom Logo & Brand Identity Design</li>
+            <li>Technology Stack Consultation & Development</li>
+          </ul>
+        </div>
+        
+        <!-- Service 2 -->
+        <div class="service-card fade-in" data-delay="200">
+          <h3 class="service-title">Digital Transformation & Web Solutions</h3>
+          <p class="service-description">
+            We develop robust web and mobile solutions, integrate AI and blockchain tech, and optimize digital presence.
+          </p>
+          <ul class="service-list">
+            <li>Website & Web App Development</li>
+            <li>AI & Automation</li>
+            <li>Blockchain Solutions</li>
+          </ul>
+        </div>
+        
+        <!-- Service 3 -->
+        <div class="service-card fade-in" data-delay="400">
+          <h3 class="service-title">Game Development & Interactive Tech</h3>
+          <p class="service-description">
+            Bringing interactive experiences to life through game design and immersive technology.
+          </p>
+          <ul class="service-list">
+            <li>Web & Mobile Game Development</li>
+            <li>Metaverse & AR/VR Solutions</li>
+            <li>NFT & Web3 Gaming</li>
+          </ul>
+        </div>
+        
+        <!-- Service 4 -->
+        <div class="service-card fade-in" data-delay="600">
+          <h3 class="service-title">IoT, Hardware & R&D Solutions</h3>
+          <p class="service-description">
+            Connecting the physical and digital worlds through smart devices and cutting-edge hardware.
+          </p>
+          <ul class="service-list">
+            <li>Smart IoT Solutions</li>
+            <li>Custom Hardware Development</li>
+            <li>Research & Development (R&D)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials py-section" id="work">
+    <div class="container">
+      <h2 class="section-title text-center fade-in">Client Success Stories</h2>
+      <p class="section-subtitle text-center fade-in">
+        Transforming Businesses, Driving Growth. Here's how we've helped businesses achieve exponential growth through our expertise.
+      </p>
+      
+      <div class="testimonial-grid">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card fade-in" data-delay="0">
+          <h3 class="testimonial-title">Tech Startup Accelerator</h3>
+          <p class="testimonial-text">
+            "Their strategic approach completely transformed our brand. We've seen a huge increase in recognition and client engagement."
+          </p>
+          <p class="testimonial-result">From Concept to $10M Valuation</p>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card fade-in" data-delay="200">
+          <h3 class="testimonial-title">Blockchain & Web3 Innovation</h3>
+          <p class="testimonial-text">
+            "Working with them was easy and efficient. They perfectly captured our vision, and the results were outstanding."
+          </p>
+          <p class="testimonial-result">Powering a Decentralized Marketplace</p>
+        </div>
+        
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card fade-in" data-delay="400">
+          <h3 class="testimonial-title">E-Commerce Brand Revamp</h3>
+          <p class="testimonial-text">
+            "The website they created is stunning, user-friendly, and has boosted our online conversions significantly. Highly recommend!"
+          </p>
+          <p class="testimonial-result">Increasing Revenue by 300%</p>
+        </div>
+        
+        <!-- Testimonial 4 -->
+        <div class="testimonial-card fade-in" data-delay="600">
+          <h3 class="testimonial-title">IoT Smart Factory</h3>
+          <p class="testimonial-text">
+            "Our new branding resonated with our audience immediately. We've received so many compliments and new business inquiries."
+          </p>
+          <p class="testimonial-result">Reducing Operational Costs by 40%</p>
+        </div>
+        
+        <!-- Testimonial 5 -->
+        <div class="testimonial-card fade-in" data-delay="800">
+          <h3 class="testimonial-title">Enterprise AI Chatbot</h3>
+          <p class="testimonial-text">
+            "Their designs are not only beautiful but effective. Our sales increased by 30% post-launch. Incredible experience!"
+          </p>
+          <p class="testimonial-result">Automating Customer Support</p>
+        </div>
+        
+        <!-- Testimonial 6 -->
+        <div class="testimonial-card fade-in" data-delay="1000">
+          <h3 class="testimonial-title">UX Design Transformation</h3>
+          <p class="testimonial-text">
+            "Their UX design made our platform more intuitive and enjoyable to use. Customer satisfaction has dramatically improved."
+          </p>
+          <p class="testimonial-result">Improved User Experience</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about py-section" id="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2 class="section-title slide-in-left">About Us</h2>
+          <p class="slide-in-left">
+            <strong>Empowering Innovation, Building Success</strong>
+          </p>
+          <p class="slide-in-left">
+            OGO LABS is more than just a service provider—we are your strategic partner in driving business excellence. Since the 2018 first step toward success as Phoenix Tech Solution, leading to name rebranding to OgO LaBs in 2024 we have worked alongside leading agencies, technology firms, and corporate innovators to provide premium digital transformation solutions.
+          </p>
+          <p class="slide-in-left">
+            Our mission is to help businesses of all sizes harness the power of technology and innovation to achieve sustainable growth and competitive advantage in today's digital landscape.
+          </p>
+          <a href="#contact" class="btn slide-in-left">Partner With Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-section" id="contact">
+    <div class="container">
+      <h2 class="section-title text-center fade-in">Let's Talk</h2>
+      <p class="section-subtitle text-center fade-in">
+        Ready to transform your business? Get in touch and let's discuss how we can help you achieve your goals.
+      </p>
+      <div class="text-center fade-in">
+        <a href="#" class="btn">Contact Us Today</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3>OGO LABS</h3>
+          <p>Your 360° Business Growth & Digital Transformation Partner since 2018.</p>
+        </div>
+        <div class="footer-column">
+          <h3>Services</h3>
+          <ul class="footer-links">
+            <li><a href="#services">Business Consulting</a></li>
+            <li><a href="#services">Digital Transformation</a></li>
+            <li><a href="#services">Game Development</a></li>
+            <li><a href="#services">IoT & Hardware</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Company</h3>
+          <ul class="footer-links">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#work">Our Work</a></li>
+            <li><a href="#blogs">Blogs</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Connect</h3>
+          <ul class="footer-links">
+            <li><a href="#" target="_blank">LinkedIn</a></li>
+            <li><a href="#" target="_blank">Twitter</a></li>
+            <li><a href="#" target="_blank">Instagram</a></li>
+            <li><a href="#" target="_blank">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 OGO LABS. All Rights Reserved.</p>
+        <div class="social-icons">
+          <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <a href="#home" class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <script>
+    // Wait for DOM to be fully loaded
+ // Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+  // Elements
+  const header = document.getElementById('header');
+  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+  const backToTopButton = document.getElementById('backToTop');
   
-</body>
-</html>
+  // Add missing services content
+  const addMissingContent = () => {
+    // Additional services content
+    const additionalServices = [
+      {
+        title: "Mobile App Development",
+        description: "Creating native and cross-platform mobile applications that engage users and drive business growth.",
+        items: [
+          "iOS & Android Development",
+          "Cross-Platform Solutions",
+          "App Store Optimization",
+          "Mobile UI/UX Design",
+          "App Maintenance & Support"
+        ]
+      },
+      {
+        title: "AI & Machine Learning",
+        description: "Implementing cutting-edge AI solutions to automate processes and gain valuable insights from your data.",
+        items: [
+          "Predictive Analytics",
+          "Natural Language Processing",
+          "Machine Learning Models",
+          "AI Integration Services",
+          "Chatbots & Virtual Assistants"
+        ]
+      },
+      {
+        title: "Blockchain Solutions",
+        description: "Leveraging blockchain technology to create secure, transparent, and efficient business processes.",
+        items: [
+          "Smart Contract Development",
+          "DeFi Applications",
+          "NFT Marketplaces",
+          "Private Blockchain Networks",
+          "Crypto Wallet Integration"
+        ]
+      },
+      {
+        title: "UX/UI Design",
+        description: "Crafting intuitive and engaging user experiences that convert visitors into customers.",
+        items: [
+          "User Research & Persona Development",
+          "Wireframing & Prototyping",
+          "Visual Design & Branding",
+          "Usability Testing",
+          "Design Systems"
+        ]
+      }
+    ];
+    
+    // Check if we need to add more service cards
+    const serviceGrid = document.querySelector('.service-grid');
+    if (serviceGrid && serviceGrid.children.length < 8) {
+      // Add the additional services
+      additionalServices.forEach((service, index) => {
+        const serviceCard = document.createElement('div');
+        serviceCard.className = 'service-card fade-in';
+        serviceCard.setAttribute('data-delay', (600 + (index * 200)).toString());
+        
+        let serviceItems = '';
+        service.items.forEach(item => {
+          serviceItems += `<li>${item}</li>`;
+        });
+        
+        serviceCard.innerHTML = `
+          <h3 class="service-title">${service.title}</h3>
+          <p class="service-description">${service.description}</p>
+          <ul class="service-list">
+            ${serviceItems}
+          </ul>
+        `;
+        
+        serviceGrid.appendChild(serviceCard);
+      });
+    }
+    
+    // Add blog section if missing
+    if (!document.getElementById('blogs')) {
+      const aboutSection = document.getElementById('about');
+      if (aboutSection) {
+        const blogsSection = document.createElement('section');
+        blogsSection.id = 'blogs';
+        blogsSection.className = 'py-section';
+        
+        blogsSection.innerHTML = `
+          <div class="container">
+            <h2 class="section-title text-center fade-in">Latest Insights</h2>
+            <p class="section-subtitle text-center fade-in">
+              Stay updated with the latest trends, technologies, and business strategies through our blog.
+            </p>
+            <div class="service-grid">
+              <div class="service-card fade-in" data-delay="0">
+                <h3 class="service-title">The Future of AI in Business</h3>
+                <p class="service-description">
+                  Explore how artificial intelligence is transforming business operations and customer experiences.
+                </p>
+                <a href="#" class="btn">Read More</a>
+              </div>
+              <div class="service-card fade-in" data-delay="200">
+                <h3 class="service-title">Blockchain Beyond Cryptocurrency</h3>
+                <p class="service-description">
+                  Discover practical applications of blockchain technology across various industries.
+                </p>
+                <a href="#" class="btn">Read More</a>
+              </div>
+              <div class="service-card fade-in" data-delay="400">
+                <h3 class="service-title">Optimizing UX for Conversion</h3>
+                <p class="service-description">
+                  Learn key strategies to enhance user experience and boost conversion rates.
+                </p>
+                <a href="#" class="btn">Read More</a>
+              </div>
+            </div>
+          </div>
+        `;
+        
+        aboutSection.parentNode.insertBefore(blogsSection, aboutSection.nextSibling);
+      }
+    }
+  };
+  
+  // Call the function to add missing content
+  addMissingContent();
+  
+  // Header scroll effect
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+    
+    // Back to top button visibility
+    if (window.scrollY > 300) {
+      backToTopButton.classList.add('visible');
+    } else {
+      backToTopButton.classList.remove('visible');
+    }
+    
+    // Check for elements to animate on scroll
+    animateOnScroll();
+  });
+  
+  // Mobile menu toggle
+  mobileMenuToggle.addEventListener('click', function() {
+    mobileMenu.classList.toggle('active');
+    
+    // Transform hamburger to X
+    const spans = mobileMenuToggle.querySelectorAll('span');
+    if (mobileMenu.classList.contains('active')) {
+      spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'rotate(-45deg) translate(7px, -7px)';
+      // Prevent scrolling when menu is open
+      document.body.style.overflow = 'hidden';
+    } else {
+      spans[0].style.transform = 'none';
+      spans[1].style.opacity = '1';
+      spans[2].style.transform = 'none';
+      // Allow scrolling when menu is closed
+      document.body.style.overflow = 'auto';
+    }
+  });
+  
+  // Close mobile menu when clicking a link
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      mobileMenu.classList.remove('active');
+      const spans = mobileMenuToggle.querySelectorAll('span');
+      spans[0].style.transform = 'none';
+      spans[1].style.opacity = '1';
+      spans[2].style.transform = 'none';
+      document.body.style.overflow = 'auto';
+    });
+  });
+  
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        // Calculate header height to offset scroll position
+        const headerHeight = header.offsetHeight;
+        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+  
+  // Animation on scroll
+  function animateOnScroll() {
+    const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
+    
+    animatedElements.forEach(element => {
+      const elementPosition = element.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      const delay = element.getAttribute('data-delay') || 0;
+      
+      if (elementPosition < windowHeight - 100) {
+        setTimeout(() => {
+          element.classList.add('visible');
+        }, delay);
+      }
+    });
+  }
+  
+  // Initialize AOS animation library if available
+  if (typeof AOS !== 'undefined') {
+    AOS.init({
+      duration: 800,
+      offset: 100,
+      once: true
+    });
+  }
+  
+  // Initialize GSAP animations if available
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    // Register ScrollTrigger plugin
+    gsap.registerPlugin(ScrollTrigger);
+    
+    // Hero section animations
+    gsap.from('.hero-title', {
+      duration: 1,
+      y: 50,
+      ease: 'power3.out'
+    });
+    
+    gsap.from('.hero-description', {
+      duration: 1,
+      y: 30,
+      delay: 0.3,
+      ease: 'power3.out'
+    });
+    
+    gsap.from('.hero-features', {
+      duration: 1,
+      y: 30,
+      delay: 0.5,
+      ease: 'power3.out'
+    });
+    
+    gsap.from('.hero-cta', {
+      duration: 1,
+      y: 30,
+      delay: 0.7,
+      ease: 'power3.out'
+    });
+    
+    // Section titles animation
+    gsap.utils.toArray('.section-title').forEach(title => {
+      gsap.from(title, {
+        scrollTrigger: {
+          trigger: title,
+          start: 'top 80%'
+        },
+        y: 30,
+        duration: 0.8
+      });
+    });
+    
+    // Service cards staggered animation
+    gsap.from('.service-card', {
+      scrollTrigger: {
+        trigger: '.service-grid',
+        start: 'top 80%'
+      },
+      y: 50,
+      duration: 0.8,
+      stagger: 0.2,
+      ease: 'power3.out'
+    });
+    
+    // Testimonial cards staggered animation
+    gsap.from('.testimonial-card', {
+      scrollTrigger: {
+        trigger: '.testimonial-grid',
+        start: 'top 80%'
+      },
+      y: 50,
+      duration: 0.8,
+      stagger: 0.15,
+      ease: 'power3.out'
+    });
+    
+    // About section animation
+    gsap.from('.about-text > *', {
+      scrollTrigger: {
+        trigger: '.about-content',
+        start: 'top 80%'
+      },
+      x: -50,
+      duration: 0.8,
+      stagger: 0.2
+    });
+    
+    gsap.from('.about-image', {
+      scrollTrigger: {
+        trigger: '.about-content',
+        start: 'top 80%'
+      },
+      x: 50,
+      duration: 0.8
+    });
+    
+    // Contact section animation
+    gsap.from('#contact .fade-in', {
+      scrollTrigger: {
+        trigger: '#contact',
+        start: 'top 80%'
+      },
+      y: 30,
+      duration: 0.8,
+      stagger: 0.2
+    });
+  }
+  
+  // Add parallax effect to hero image if desired
+  const heroImage = document.querySelector('.hero-image img');
+  if (heroImage) {
+    window.addEventListener('scroll', function() {
+      const scrollPosition = window.pageYOffset;
+      heroImage.style.transform = `translateY(${scrollPosition * 0.4}px)`;
+    });
+  }
+  
+  // Form submission handler (if contact form exists)
+  const contactForm = document.querySelector('form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Simulate form submission
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      if (submitButton) {
+        const originalText = submitButton.textContent;
+        submitButton.textContent = 'Sending...';
+        submitButton.disabled = true;
+        
+        // Simulate API call
+        setTimeout(() => {
+          const formFields = contactForm.querySelectorAll('input, textarea');
+          formFields.forEach(field => field.value = '');
+          
+          // Show success message
+          const successMessage = document.createElement('div');
+          successMessage.className = 'success-message';
+          successMessage.textContent = 'Thank you! Your message has been sent successfully.';
+          successMessage.style.color = '#4CAF50';
+          successMessage.style.padding = '1rem 0';
+          successMessage.style.fontWeight = 'bold';
+          
+          contactForm.appendChild(successMessage);
+          
+          submitButton.textContent = originalText;
+          submitButton.disabled = false;
+          
+          // Remove success message after 5 seconds
+          setTimeout(() => {
+            successMessage.remove();
+          }, 5000);
+        }, 1500);
+      }
+    });
+  }
+  
+  // Add image loading animations
+  const images = document.querySelectorAll('img');
+  images.forEach(img => {
+    img.addEventListener('load', function() {
+    });
+  });
+  
+  // Run initial animation check to show elements in viewport on page load
+  setTimeout(animateOnScroll, 100);
+  
+  // Add preloader if desired
+  const addPreloader = () => {
+    const preloader = document.createElement('div');
+    preloader.className = 'preloader';
+    preloader.innerHTML = `
+      <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
+    `;
+    
+    // Add preloader styles
+    const style = document.createElement('style');
+    style.textContent = `
+      .preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--primary-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: visible;
+      }
+      .spinner {
+        width: 70px;
+        text-align: center;
+      }
+      .spinner > div {
+        width: 18px;
+        height: 18px;
+        background-color: var(--accent-color);
+        border-radius: 100%;
+        display: inline-block;
+        animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+        margin: 0 3px;
+      }
+      .spinner .bounce1 {
+        animation-delay: -0.32s;
+      }
+      .spinner .bounce2 {
+        animation-delay: -0.16s;
+      }
+      @keyframes sk-bouncedelay {
+        0%, 80%, 100% { transform: scale(0); }
+        40% { transform: scale(1.0); }
+      }
+    `;
+    
+    document.head.appendChild(style);
+    document.body.appendChild(preloader);
+    
+    // Hide preloader once page is loaded
+    window.addEventListener('load', function() {
+      setTimeout(() => {
+        preloader.style.visibility = 'hidden';
+        
+        // Remove preloader after transition
+        setTimeout(() => {
+          preloader.remove();
+        }, 500);
+      }, 500);
+    });
+  };
+  
+  // Add preloader
+  addPreloader();
+});
+  </script>
+  
