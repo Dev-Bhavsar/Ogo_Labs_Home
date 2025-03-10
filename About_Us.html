@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>OGO LABS | Contact Us - Your 360° Business Growth Partner</title>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.19.3/inter.min.css">
+
+    <style>
+        :root {
+            --primary-color: #0e1011;
+            --secondary-color: #181a1b;
+            --accent-color: #4169e1;
+            --text-color: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.7);
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            border: none;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent-color) var(--primary-color);
+        }
+
+        body {
+            background: var(--primary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Header Styles */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1rem 0;
+      background-color: #0e1011;
+    }
+
+    header.scrolled {
+      background-color: rgba(14, 16, 17, 0.95);
+      padding: 1rem 0;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        /* Utility Classes */
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .py-section {
+            padding: 5rem 0;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: white !important;
+            color: var(--secondary-color);
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            color: white !important;
+            background: var(--primary-color);
+            margin: 15px auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border: none;
+        }
+
+        .btn:hover {
+            background-color: #3050c7;
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            transition: all var(--transition-speed);
+        }
+
+        header.scrolled {
+            background-color: rgba(14, 16, 17, 0.95);
+            padding: 1rem 0;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            margin-left: 10px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #4169e1;
+        }
+
+        .contact-btn {
+            background-color: #4169e1;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background-color: #3050c7;
+        }
+
+        nav a {
+            color: var(--text-color);
+            font-weight: 600;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width var(--transition-speed);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 22px;
+            cursor: pointer;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: white;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            height: 100vh;
+            background-color: rgba(14, 16, 17, 0.98);
+            z-index: 999;
+            padding: 80px 40px 40px;
+            transition: right 0.4s ease;
+            overflow-y: auto;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mobile-menu ul li {
+            margin-bottom: 25px;
+        }
+
+        .mobile-menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            display: block;
+            padding: 10px 0;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu ul li a:hover {
+            color: #4169e1;
+        }
+
+        /* Page Title */
+        .page-title {
+            text-align: center;
+            padding: 160px 0 80px;
+            background-color: var(--secondary-color);
+        }
+
+        .page-title h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #4169e1, #a0b9ff);
+            -webkit-text-fill-color: transparent;
+        }
+
+        .page-title p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--text-muted);
+        }
+
+        /* Contact Section Styles */
+        .contact-section {
+            padding: 80px 0;
+            background-color: var(--primary-color);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info {
+            background-color: rgba(24, 26, 27, 0.5);
+            border-radius: 10px;
+            padding: 40px;
+            height: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-info h2 {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 30px;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .contact-method i {
+            font-size: 24px;
+            color: var(--accent-color);
+            margin-right: 20px;
+            margin-top: 5px;
+        }
+
+        .contact-details h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-details p {
+            color: var(--text-muted);
+        }
+
+        .social-links {
+            margin-top: 40px;
+        }
+
+        .social-links h3 {
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(65, 105, 225, 0.1);
+            border-radius: 50%;
+            color: var(--accent-color);
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background-color: var(--accent-color);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .contact-form {
+            background-color: rgba(24, 26, 27, 0.5);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-form h2 {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--accent-color);
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 80px 0;
+            background-color: var(--secondary-color);
+        }
+
+        .map-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 40px;
+        }
+
+        .map-container {
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background-color: var(--primary-color);
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 40px;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .faq-item {
+            background-color: rgba(24, 26, 27, 0.5);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+
+        .faq-answer {
+            color: var(--text-muted);
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--primary-color);
+            padding: 5rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style-type: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            transition: color var(--transition-speed);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(65, 105, 225, 0.3);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social-icons a {
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            transition: color var(--transition-speed);
+        }
+
+        .footer-social-icons a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .page-title h1 {
+                font-size: 3rem;
+            }
+
+            .contact-grid {
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            nav ul {
+                display: none;
+            }
+
+            .contact-btn {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .header-inner {
+                padding: 0 20px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .contact-info {
+                order: 2;
+            }
+
+            .contact-form {
+                order: 1;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                padding: 140px 0 60px;
+            }
+
+            .page-title h1 {
+                font-size: 2.5rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .contact-method {
+                flex-direction: column;
+            }
+
+            .contact-method i {
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-title h1 {
+                font-size: 2rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .contact-section,
+            .map-section,
+            .faq-section {
+                padding: 50px 0;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 25px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .logo {
+                font-size: 20px;
+            }
+
+            .mobile-menu {
+                width: 100%;
+            }
+
+            .social-icons {
+                flex-wrap: wrap;
+            }
+        }
+
+        /* New Section: Our Projects */
+        .projects-section {
+            padding: 80px 0;
+            background-color: var(--secondary-color);
+        }
+
+        .projects-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 40px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: rgba(24, 26, 27, 0.5);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="header-inner">
+                <img src="MainLogo.png" height="50px">
+                <div class="logo">OGO LABS</div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="About_Us.html">About</a></li>
+                        <li><a href="Contact.html">Contact Us</a></li>
+                        <li><a href="#blogs">Blogs</a></li>
+                    </ul>
+                </nav>
+                <a href="Contact.html" class="contact-btn">Let's Talk</a>
+                <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html" class="mobile-link">Home</a></li>
+            <li><a href="services.html" class="mobile-link">Services</a></li>
+            <li><a href="About_Us.html" class="mobile-link">About</a></li>
+            <li><a href="Contact.html">Contact Us</a></li>
+            <li><a href="#blogs" class="mobile-link">Blogs</a></li>
+            <li><a href="Contact.html" class="mobile-link">Let's Talk</a></li>
+        </ul>
+    </div>
+
+    <!-- Page Title -->
+    <section class="page-title">
+        <div class="container">
+            <h2>Your Strategic Partner in Business Excellence</h2>
+            <p>Transforming ideas into powerful digital solutions since 2018</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Our Journey</h2>
+            <div class="journey">
+                <p>Our story began with a vision to bridge the gap between cutting-edge technology and practical business applications. Starting as Phoenix Tech Solution in 2018, we quickly gained recognition for our innovative approach and technical expertise.</p>
+                <br>
+                <p>In 2024, we embraced our evolution by rebranding to OGO LABS—a name that reflects our commitment to growth, optimization, and forward-thinking solutions. This transformation represents not just a change in identity but an expansion of our capabilities and vision.</p>
+                <br>
+                <p>Today, we continue to work alongside leading agencies, technology firms, and corporate innovators worldwide, providing premium digital transformation solutions that drive real business value.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Why Choose Us?</h2>
+            <div class="features">
+                <div class="feature-box">
+                   
+                    <h3 class="feature-title">Collaborative Excellence</h3>
+                    <p>We've built a thriving corporate community where businesses come together for mutual success. Our collaborative approach ensures that every partnership delivers value beyond expectations.</p>
+                </div>
+
+                <div class="feature-box">
+                   
+                    <h3 class="feature-title">Technical Mastery</h3>
+                    <p>With unmatched expertise in AI, Blockchain, IoT, Game Development, and E-commerce, our specialists stay at the forefront of technological advancement to deliver solutions that give your business a competitive edge.</p>
+                </div>
+
+                <div class="feature-box">
+                   
+                    <h3 class="feature-title">Win-Win Business Model</h3>
+                    <p>Our unique business approach creates sustainable value for both service providers and clients, fostering long-term relationships built on trust and shared success.</p>
+                </div>
+
+                <div class="feature-box">
+                    
+                    <h3 class="feature-title">Comprehensive Solutions</h3>
+                    <p>From initial branding to full-scale product deployment, we provide end-to-end business solutions that address every aspect of your digital transformation journey.</p>
+                </div>
+
+                <div class="feature-box">
+                   
+                    <h3 class="feature-title">Global Scalability</h3>
+                    <p>Every solution we design is customized for global reach and scalability, ensuring your business can expand seamlessly into new markets and opportunities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Our Approach</h2>
+            <p style="text-align: center; margin-bottom: 30px;">At OGO LABS, we believe in a client-centered methodology that combines strategic thinking with technical innovation:</p>
+
+            <div class="approach-steps">
+                <div class="step">
+                    
+                    <div class="step-content">
+                        <h3 class="step-title">Discovery & Analysis</h3>
+                        <p>We begin by thoroughly understanding your business objectives, challenges, and market position.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                   
+                    <div class="step-content">
+                        <h3 class="step-title">Strategic Planning</h3>
+                        <p>Our experts develop a customized roadmap aligned with your specific goals and industry requirements.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    
+                    <div class="step-content">
+                        <h3 class="step-title">Agile Implementation</h3>
+                        <p>Using cutting-edge technologies and best practices, we bring your vision to life through iterative development.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                   
+                    <div class="step-content">
+                        <h3 class="step-title">Optimization & Scaling</h3>
+                        <p>We continuously refine and enhance your solutions to maximize performance and facilitate growth.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                   
+                    <div class="step-content">
+                        <h3 class="step-title">Ongoing Support</h3>
+                        <p>Our commitment extends beyond deployment with dedicated support and proactive maintenance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Our Expertise</h2>
+
+            <div class="expertise-areas">
+                <div class="expertise-card">
+                    <div class="expertise-icon">🤖</div>
+                    <h3 class="expertise-title">Artificial Intelligence</h3>
+                    <p>Advanced machine learning, natural language processing, and computer vision applications that drive automation and insights.</p>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="expertise-icon">🔗</div>
+                    <h3 class="expertise-title">Blockchain</h3>
+                    <p>Secure, transparent, and efficient blockchain solutions for various business needs, from supply chain management to financial services.</p>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="expertise-icon">📱</div>
+                    <h3 class="expertise-title">IoT Ecosystem</h3>
+                    <p>Comprehensive Internet of Things solutions that connect, collect, and convert data into actionable business intelligence.</p>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="expertise-icon">🎮</div>
+                    <h3 class="expertise-title">Game Development</h3>
+                    <p>Immersive and engaging gaming experiences across multiple platforms, combining cutting-edge technologies with creative storytelling.</p>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="expertise-icon">🛒</div>
+                    <h3 class="expertise-title">E-commerce</h3>
+                    <p>Scalable, user-friendly, and conversion-optimized online retail solutions that elevate your digital presence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Join Our Success Story</h2>
+            <p class="cta-subtitle">At OGO LABS, we don't just deliver services—we build lasting partnerships that drive mutual growth. Our success is measured by your achievements.</p>
+            <a href="Contact.html" class="btn">Let's Innovate Together</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>OGO LABS</h3>
+                    <p>Your 360° Business Growth Partner</p>
+                    <p>We transform ideas into digital realities and help businesses thrive in the digital era.</p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html#business-consulting">Business Consulting</a></li>
+                        <li><a href="services.html#digital-transformation">Digital Transformation</a></li>
+                        <li><a href="services.html#game-development">Game Development</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#blogs">Our Blog</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="Contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> info@ogolabs.com</li>
+                        <li><i class="fas fa-phone"></i> +91 79901 24607</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Gujarat, India</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 OGO LABS. All rights reserved.</p>
+                <div class="footer-social-icons">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <a href="#home" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    <!-- JavaScript for Header Scroll Effect and Mobile Menu -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+       // const backToTopButton = document.getElementById('backToTop');
+        mobileMenuToggle.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            });
+        });
+
+        const backToTopButton = document.getElementById('backToTop');
+
+// Show/hide back to top button on scroll
+window.addEventListener('scroll', function() {
+    if (window.scrollY > 300) {
+        backToTopButton.classList.add('visible');
+    } else {
+        backToTopButton.classList.remove('visible');
+    }
+});
+
+// Smooth scroll to top when clicking the button
+backToTopButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Check scroll position on page load
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        }
+
+        // Simple form validation
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // You can add AJAX form submission here
+                alert('Thank you for your message! We will get back to you shortly.');
+                contactForm.reset();
+            });
+        }
+  
+  // Add preloader if desired
+  const addPreloader = () => {
+    const preloader = document.createElement('div');
+    preloader.className = 'preloader';
+    preloader.innerHTML = `
+      <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
+    `;
+    
+    document.addEventListener('DOMContentLoaded', function() {
+  // Function to check if element is in viewport
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+      rect.bottom >= 0
+    );
+  }
+  
+  // Function to handle scroll animations
+  function handleScrollAnimations() {
+    const animatedElements = document.querySelectorAll('.slide-in-left');
+    
+    animatedElements.forEach(element => {
+      if (isInViewport(element)) {
+        element.classList.add('animate');
+      }
+    });
+  }
+  
+  // Run on page load
+ /// handleScrollAnimations();
+  
+  // Run on scroll
+  window.addEventListener('scroll', handleScrollAnimations);
+});
+
+    // Add preloader styles
+    const style = document.createElement('style');
+    style.textContent = `
+      .preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--primary-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: visible;
+      }
+      .spinner {
+        width: 70px;
+        text-align: center;
+      }
+      .spinner > div {
+        width: 18px;
+        height: 18px;
+        background-color: var(--accent-color);
+        border-radius: 100%;
+        display: inline-block;
+        animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+        margin: 0 3px;
+      }
+      .spinner .bounce1 {
+        animation-delay: -0.32s;
+      }
+      .spinner .bounce2 {
+        animation-delay: -0.16s;
+      }
+      @keyframes sk-bouncedelay {
+        0%, 80%, 100% { transform: scale(0); }
+        40% { transform: scale(1.0); }
+      }
+    `;
+    
+    document.head.appendChild(style);
+    document.body.appendChild(preloader);
+    
+    // Hide preloader once page is loaded
+    window.addEventListener('load', function() {
+      setTimeout(() => {
+        preloader.style.visibility = 'hidden';
+        
+        // Remove preloader after transition
+        setTimeout(() => {
+          preloader.remove();
+        }, 500);
+      }, 500);
+    });
+  };
+
+        // Add preloader
+  addPreloader();
+    </script>
+</body>
+</html>

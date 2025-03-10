@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>OGO LABS | Contact Us - Your 360° Business Growth Partner</title>
+    
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.19.3/inter.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #0e1011;
+            --secondary-color: #181a1b;
+            --accent-color: #4169e1;
+            --text-color: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.7);
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            border: none;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent-color) var(--primary-color);
+        }
+
+        body {
+            background: var(--primary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Header Styles */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1rem 0;
+      background-color: #0e1011;
+    }
+
+    header.scrolled {
+      background-color: rgba(14, 16, 17, 0.95);
+      padding: 1rem 0;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        /* Utility Classes */
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .py-section {
+            padding: 5rem 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border: none;
+        }
+
+        .btn:hover {
+            background-color: #3050c7;
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            transition: all var(--transition-speed);
+        }
+
+        header.scrolled {
+            background-color: rgba(14, 16, 17, 0.95);
+            padding: 1rem 0;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            margin-left: 10px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #4169e1;
+        }
+
+        .contact-btn {
+            background-color: #4169e1;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background-color: #3050c7;
+        }
+
+        nav a {
+            color: var(--text-color);
+            font-weight: 600;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width var(--transition-speed);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 22px;
+            cursor: pointer;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: white;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            height: 100vh;
+            background-color: rgba(14, 16, 17, 0.98);
+            z-index: 999;
+            padding: 80px 40px 40px;
+            transition: right 0.4s ease;
+            overflow-y: auto;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mobile-menu ul li {
+            margin-bottom: 25px;
+        }
+
+        .mobile-menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            display: block;
+            padding: 10px 0;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu ul li a:hover {
+            color: #4169e1;
+        }
+
+        /* Page Title */
+        .page-title {
+            text-align: center;
+            padding: 160px 0 80px;
+            background-color: var(--secondary-color);
+        }
+        
+        .page-title h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #4169e1, #a0b9ff);
+         
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .page-title p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--text-muted);
+        }
+
+        /* Contact Section Styles */
+        .contact-section {
+            padding: 80px 0;
+            background-color: var(--primary-color);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info {
+            background-color: rgba(24, 26, 27, 0.5);
+            border-radius: 10px;
+            padding: 40px;
+            height: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-info h2 {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 30px;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .contact-method i {
+            font-size: 24px;
+            color: var(--accent-color);
+            margin-right: 20px;
+            margin-top: 5px;
+        }
+
+        .contact-details h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-details p {
+            color: var(--text-muted);
+        }
+
+        .social-links {
+            margin-top: 40px;
+        }
+
+        .social-links h3 {
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(65, 105, 225, 0.1);
+            border-radius: 50%;
+            color: var(--accent-color);
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background-color: var(--accent-color);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .contact-form {
+            background-color: rgba(24, 26, 27, 0.5);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-form h2 {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--accent-color);
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 80px 0;
+            background-color: var(--secondary-color);
+        }
+
+        .map-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 40px;
+        }
+
+        .map-container {
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background-color: var(--primary-color);
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 40px;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .faq-item {
+            background-color: rgba(24, 26, 27, 0.5);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+
+        .faq-answer {
+            color: var(--text-muted);
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--primary-color);
+            padding: 5rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style-type: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            transition: color var(--transition-speed);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background-color: var(--accent-color);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+      z-index: 99;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(65, 105, 225, 0.3);
+    }
+
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social-icons a {
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            transition: color var(--transition-speed);
+        }
+
+        .footer-social-icons a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .page-title h1 {
+                font-size: 3rem;
+            }
+            
+            .contact-grid {
+                gap: 30px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            nav ul {
+                display: none;
+            }
+            
+            .contact-btn {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            .header-inner {
+                padding: 0 20px;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .contact-info {
+                order: 2;
+            }
+            
+            .contact-form {
+                order: 1;
+            }
+            
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-title {
+                padding: 140px 0 60px;
+            }
+            
+            .page-title h1 {
+                font-size: 2.5rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .contact-method {
+                flex-direction: column;
+            }
+            
+            .contact-method i {
+                margin-bottom: 10px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .page-title h1 {
+                font-size: 2rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            .contact-section,
+            .map-section,
+            .faq-section {
+                padding: 50px 0;
+            }
+            
+            .contact-info,
+            .contact-form {
+                padding: 25px;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .logo {
+                font-size: 20px;
+            }
+            
+            .mobile-menu {
+                width: 100%;
+            }
+            
+            .social-icons {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="header-inner">
+                <img src="MainLogo.png" height="50px">
+                <div class="logo">OGO LABS</div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="About_Us.html">About</a></li>
+                        <li><a href="Contact.html">Contact Us</a></li>
+                        <li><a href="#blogs">Blogs</a></li>
+                    </ul>
+                </nav>
+                <a href="Contact.html" class="contact-btn">Let's Talk</a>
+                <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html" class="mobile-link">Home</a></li>
+            <li><a href="services.html" class="mobile-link">Services</a></li>
+            <li><a href="About_Us.html" class="mobile-link">About</a></li>
+            <li><a href="Contact.html">Contact Us</a></li>
+            <li><a href="#blogs" class="mobile-link">Blogs</a></li>
+            <li><a href="Contact.html" class="mobile-link">Let's Talk</a></li>
+        </ul>
+    </div>
+
+    <!-- Page Title -->
+    <section class="page-title">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Let's discuss how we can help transform your business and drive growth together</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="Contactus" class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    
+                    <div class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-details">
+                            <h3>Email Us</h3>
+                            <p>info@ogolabs.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <i class="fas fa-phone-alt"></i>
+                        <div class="contact-details">
+                            <h3>Call Us</h3>
+                            <p>+91 79901 24607</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-details">
+                            <h3>Visit Us</h3>
+                            <p>B-708 PNTC, Times Of India Press Rd,</p>
+                            <p>Rajmani Society, Satellite, Shyamal,</p>
+                            <p>Ahmedabad, Gujarat 380015</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <i class="fas fa-clock"></i>
+                        <div class="contact-details">
+                            <h3>Business Hours</h3>
+                            <p>Monday - Friday: 10am - 7pm IST</p>
+                            <p>Saturday & Sunday: Closed</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <h3>Connect With Us</h3>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h2>Send Us a Message</h2>
+                    <form id="contactForm" action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2>Find Us</h2>
+            <div class="map-container">
+                <!-- Replace with your actual Google Maps embed code -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100000!2d72.5202845!3d23.0096223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z23.0096223N%2072.5202845E!5e0!3m2!1sen!2sin!4v1615458399557!5m2!1sen!2sin"
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">What is your typical project timeline?</div>
+                    <div class="faq-answer">Our project timelines vary depending on the complexity and requirements of each project. Typically, simple websites take 2-4 weeks, mobile apps 2-4 months, and complex enterprise solutions 3-6 months. We'll provide a detailed timeline during our initial consultation.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Do you offer ongoing support after project completion?</div>
+                    <div class="faq-answer">Yes, we offer various support and maintenance packages to ensure your digital solutions continue to perform optimally. These include technical support, security updates, performance optimization, and feature enhancements.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How do you handle project pricing?</div>
+                    <div class="faq-answer">We provide custom quotes based on your specific requirements. Depending on the project, we work with fixed-price contracts, time and materials, or retainer-based models. We believe in transparency and will discuss all costs upfront.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Can you work with our existing tech stack?</div>
+                    <div class="faq-answer">Absolutely! We pride ourselves on our versatility. Our team is proficient in numerous technologies and frameworks, allowing us to integrate with your current systems or build new solutions that complement your existing infrastructure.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How do you ensure project success?</div>
+                    <div class="faq-answer">We follow an agile development methodology with regular checkpoints, demos, and feedback cycles. This ensures we stay aligned with your vision and can adapt quickly to changes. Our transparent communication channels and project management tools keep you informed at every step.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What industries do you specialize in?</div>
+                    <div class="faq-answer">While we have experience across numerous sectors, we have particular expertise in fintech, healthcare, e-commerce, education, and enterprise solutions. However, our methodologies and technical skills are adaptable to virtually any industry.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>OGO LABS</h3>
+                    <p>Your 360° Business Growth Partner</p>
+                    <p>We transform ideas into digital realities and help businesses thrive in the digital era.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html#business-consulting">Business Consulting</a></li>
+                        <li><a href="services.html#digital-transformation">Digital Transformation</a></li>
+                        <li><a href="services.html#game-development">Game Development</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#blogs">Our Blog</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="Contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> info@ogolabs.com</li>
+                        <li><i class="fas fa-phone"></i> +91 79901 24607</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Gujarat, India</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 OGO LABS. All rights reserved.</p>
+                <div class="footer-social-icons">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <a href="#home" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+      </a>
+    <!-- JavaScript for Header Scroll Effect and Mobile Menu -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+       // const backToTopButton = document.getElementById('backToTop');
+        mobileMenuToggle.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            });
+        });
+        window.addEventListener('scroll', function() {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+    
+   
+    
+    // Check for elements to animate on scroll
+    //animateOnScroll();
+  });
+
+  const backToTopButton = document.getElementById('backToTop');
+
+// Show/hide back to top button on scroll
+window.addEventListener('scroll', function() {
+    if (window.scrollY > 300) {
+        backToTopButton.classList.add('visible');
+    } else {
+        backToTopButton.classList.remove('visible');
+    }
+});
+
+// Smooth scroll to top when clicking the button
+backToTopButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+        // Header scroll effect
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Check scroll position on page load
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        }
+        
+        // Simple form validation
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // You can add AJAX form submission here
+                alert('Thank you for your message! We will get back to you shortly.');
+                contactForm.reset();
+            });
+        }
+
+        // Add preloader if desired
+  const addPreloader = () => {
+    const preloader = document.createElement('div');
+    preloader.className = 'preloader';
+    preloader.innerHTML = `
+      <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
+    `;
+    
+    document.addEventListener('DOMContentLoaded', function() {
+  // Function to check if element is in viewport
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+      rect.bottom >= 0
+    );
+  }
+  
+  // Function to handle scroll animations
+  function handleScrollAnimations() {
+    const animatedElements = document.querySelectorAll('.slide-in-left');
+    
+    animatedElements.forEach(element => {
+      if (isInViewport(element)) {
+        element.classList.add('animate');
+      }
+    });
+  }
+  
+  // Run on page load
+ /// handleScrollAnimations();
+  
+  // Run on scroll
+  window.addEventListener('scroll', handleScrollAnimations);
+});
+
+    // Add preloader styles
+    const style = document.createElement('style');
+    style.textContent = `
+      .preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--primary-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: visible;
+      }
+      .spinner {
+        width: 70px;
+        text-align: center;
+      }
+      .spinner > div {
+        width: 18px;
+        height: 18px;
+        background-color: var(--accent-color);
+        border-radius: 100%;
+        display: inline-block;
+        animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+        margin: 0 3px;
+      }
+      .spinner .bounce1 {
+        animation-delay: -0.32s;
+      }
+      .spinner .bounce2 {
+        animation-delay: -0.16s;
+      }
+      @keyframes sk-bouncedelay {
+        0%, 80%, 100% { transform: scale(0); }
+        40% { transform: scale(1.0); }
+      }
+    `;
+    
+    document.head.appendChild(style);
+    document.body.appendChild(preloader);
+    
+    // Hide preloader once page is loaded
+    window.addEventListener('load', function() {
+      setTimeout(() => {
+        preloader.style.visibility = 'hidden';
+        
+        // Remove preloader after transition
+        setTimeout(() => {
+          preloader.remove();
+        }, 500);
+      }, 500);
+    });
+  };
+
+        // Add preloader
+  addPreloader();
+    </script>
+</body>
+</html>

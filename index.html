@@ -101,6 +101,7 @@
       width: 100%;
       z-index: 1000;
       padding: 1rem 0;
+      background-color: #0e1011;
     }
 
     header.scrolled {
@@ -116,19 +117,50 @@
       align-items: center;
     }
 
-    .logo {
-      font-size: 2rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: var(--text-color);
-      letter-spacing: 1px;
-    }
+/* Add these styles for desktop navigation */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin-left: 10px;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-    nav ul {
-      display: flex;
-      gap: 2rem;
-      list-style-type: none;
-    }
+nav ul li {
+  margin-left: 30px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #4169e1;
+}
+
+.contact-btn {
+  background-color: #4169e1;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: #3050c7;
+}
+
+   
 
     nav a {
       color: var(--text-color);
@@ -148,83 +180,124 @@
       transition: width var(--transition-speed);
     }
 
-    nav a:hover {
-      color: var(--accent-color);
-    }
+   
 
     nav a:hover::after {
       width: 100%;
     }
 
-    .contact-btn {
-      padding: 10px 25px;
-      background: var(--accent-color);
-      color: white;
-      border-radius: 4px;
-      font-weight: 600;
-      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-    }
+    
 
-    .contact-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(65, 105, 225, 0.3);
-    }
+    
 
     /* Mobile Menu */
     .mobile-menu-toggle {
-      display: none;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 30px;
-      height: 21px;
-      cursor: pointer;
-      z-index: 1001;
-    }
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+}
 
-    .mobile-menu-toggle span {
-      display: block;
-      width: 100%;
-      height: 3px;
-      background-color: var(--text-color);
-      border-radius: 3px;
-      transition: all 0.3s ease;
-    }
+.mobile-menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
 
-    .mobile-menu {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: 100%;
-      height: 100vh;
-      background-color: var(--primary-color);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 999;
-      transition: right 0.5s ease;
-    }
+/* Mobile menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  height: 100vh;
+  background-color: rgba(14, 16, 17, 0.98);
+  z-index: 999;
+  padding: 80px 40px 40px;
+  transition: right 0.4s ease;
+  overflow-y: auto;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+}
 
-    .mobile-menu.active {
-      right: 0;
-    }
+.mobile-menu.active {
+  right: 0;
+}
 
-    .mobile-menu ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-    }
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-    .mobile-menu li {
-      margin: 1.5rem 0;
-      text-align: center;
-    }
+.mobile-menu ul li {
+  margin-bottom: 25px;
+}
 
-    .mobile-menu a {
-      color: var(--text-color);
-      font-size: 1.5rem;
-      font-weight: 600;
-    }
+.mobile-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  display: block;
+  padding: 10px 0;
+  transition: color 0.3s ease;
+}
+
+.mobile-menu ul li a:hover {
+  color: #4169e1;
+}
+
+/* Mobile responsive styles */
+@media screen and (max-width: 991px) {
+  nav {
+    display: none;
+  }
+  
+  .contact-btn {
+    display: none;
+  }
+  
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  
+  .header-inner {
+    padding: 0 20px;
+  }
+}
+
+/* For very small screens */
+@media screen and (max-width: 480px) {
+  .logo {
+    font-size: 20px;
+  }
+  
+  .mobile-menu {
+    width: 100%;
+  }
+}
+
+/* Animation for menu toggle */
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Add a body lock class to prevent scrolling when mobile menu is open */
+body.menu-open {
+  overflow: hidden;
+}
 
     /* Hero Section */
     .hero {
@@ -378,33 +451,108 @@
 
     /* About Section */
     .about {
-      background-color: var(--secondary-color);
-      padding: 5rem 0;
-    }
+  background-color: var(--secondary-color);
+  padding: 5rem 0;
+}
 
-    .about-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
+.about-content {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 900px; /* Controls the maximum width of the centered content */
+}
 
-    .about-text {
-      padding-right: 2rem;
-    }
+.about-text {
+  padding: 0 2rem;
+}
 
-    .about-image {
-      position: relative;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    }
+.section-title {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
 
-    .about-image img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
+.about-text p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.about-text p strong {
+  font-size: 1.3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #4169e1;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #3050c7;
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+  .about {
+    padding: 3rem 0;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .about-text {
+    padding: 0 1rem;
+  }
+}
+
+/* For very small screens */
+@media screen and (max-width: 480px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .about-text p {
+    font-size: 1rem;
+  }
+  
+  .about-text p strong {
+    font-size: 1.1rem;
+  }
+}
+
+/* Animation classes */
+.slide-in-left {
+  animation: slideInLeft 0.8s ease-out both;
+  animation-play-state: paused;
+  opacity: 1;
+}
+
+.slide-in-left.animate {
+  animation-play-state: running;
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-50px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 
     /* Footer */
     footer {
@@ -615,13 +763,14 @@
         <div class="logo">OGO LABS</div>
         <nav>
           <ul>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="About_Us.html">About</a></li>
+            <li><a href="Contact.html">Contact Us</a></li>
             <li><a href="#blogs">Blogs</a></li>
           </ul>
         </nav>
-        <a href="#contact" class="contact-btn">Let's Talk</a>
+        <a href="Contact.html" class="contact-btn">Let's Talk</a>
         <div class="mobile-menu-toggle" id="mobileMenuToggle">
           <span></span>
           <span></span>
@@ -634,11 +783,12 @@
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
     <ul>
-      <li><a href="#work" class="mobile-link">Work</a></li>
-      <li><a href="#services" class="mobile-link">Services</a></li>
-      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="index.html" class="mobile-link">Home</a></li>
+      <li><a href="services.html" class="mobile-link">Services</a></li>
+      <li><a href="About_Us.html" class="mobile-link">About</a></li>
+      <li><a href="Contact.html">Contact Us</a></li>
       <li><a href="#blogs" class="mobile-link">Blogs</a></li>
-      <li><a href="#contact" class="mobile-link">Let's Talk</a></li>
+      <li><a href="Contact.html" class="mobile-link">Let's Talk</a></li>
     </ul>
   </div>
 
@@ -667,7 +817,7 @@
         Backed by Industry Leaders & Agencies – Our trusted partners ensure high-quality execution & success-driven results.
       </p>
       <div class="hero-cta fade-in">
-        <a href="#contact" class="btn">Let's Build Your Future</a>
+        <a href="Contact.html" class="btn">Let's Build Your Future</a>
       </div>
     </div>
   </section>
@@ -811,7 +961,7 @@
     <div class="container">
       <div class="about-content">
         <div class="about-text">
-          <h2 class="section-title slide-in-left">About Us</h2>
+          <h2 class="section-title slide-in-left">ABOUT US</h2>
           <p class="slide-in-left">
             <strong>Empowering Innovation, Building Success</strong>
           </p>
@@ -821,7 +971,7 @@
           <p class="slide-in-left">
             Our mission is to help businesses of all sizes harness the power of technology and innovation to achieve sustainable growth and competitive advantage in today's digital landscape.
           </p>
-          <a href="#contact" class="btn slide-in-left">Partner With Us</a>
+          <a href="Contact.html" class="btn slide-in-left">Partner With Us</a>
         </div>
       </div>
     </div>
@@ -835,7 +985,7 @@
         Ready to transform your business? Get in touch and let's discuss how we can help you achieve your goals.
       </p>
       <div class="text-center fade-in">
-        <a href="#" class="btn">Contact Us Today</a>
+        <a href="Contact.html" class="btn">Contact Us Today</a>
       </div>
     </div>
   </section>
@@ -851,19 +1001,20 @@
         <div class="footer-column">
           <h3>Services</h3>
           <ul class="footer-links">
-            <li><a href="#services">Business Consulting</a></li>
-            <li><a href="#services">Digital Transformation</a></li>
-            <li><a href="#services">Game Development</a></li>
-            <li><a href="#services">IoT & Hardware</a></li>
+            <ul class="footer-links">
+              <li><a href="services.html#business-consulting">Business Consulting</a></li>
+              <li><a href="services.html#digital-transformation">Digital Transformation</a></li>
+              <li><a href="services.html#game-development">Game Development</a></li>
+          </ul>
           </ul>
         </div>
         <div class="footer-column">
           <h3>Company</h3>
           <ul class="footer-links">
             <li><a href="#about">About Us</a></li>
-            <li><a href="#work">Our Work</a></li>
+            <li><a href="services.html">Our Work</a></li>
             <li><a href="#blogs">Blogs</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="Contact.html">Contact</a></li>
           </ul>
         </div>
         <div class="footer-column">
@@ -903,6 +1054,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const mobileMenu = document.getElementById('mobileMenu');
   const mobileLinks = document.querySelectorAll('.mobile-link');
   const backToTopButton = document.getElementById('backToTop');
+  const body = document.body;
   
   // Add missing services content
   const addMissingContent = () => {
@@ -1300,6 +1452,34 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     `;
     
+    document.addEventListener('DOMContentLoaded', function() {
+  // Function to check if element is in viewport
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+      rect.bottom >= 0
+    );
+  }
+  
+  // Function to handle scroll animations
+  function handleScrollAnimations() {
+    const animatedElements = document.querySelectorAll('.slide-in-left');
+    
+    animatedElements.forEach(element => {
+      if (isInViewport(element)) {
+        element.classList.add('animate');
+      }
+    });
+  }
+  
+  // Run on page load
+ /// handleScrollAnimations();
+  
+  // Run on scroll
+  window.addEventListener('scroll', handleScrollAnimations);
+});
+
     // Add preloader styles
     const style = document.createElement('style');
     style.textContent = `
@@ -1361,4 +1541,5 @@ document.addEventListener('DOMContentLoaded', function() {
   addPreloader();
 });
   </script>
+  </body></html>
   
