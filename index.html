@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>OGO LABS | Your 360° Business Growth Partner</title>
-  
+
   <!-- Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.19.3/inter.min.css">
-  
+
   <!-- Animation Libraries -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -18,11 +18,11 @@
 
   <style>
     :root {
-      --primary-color: #0e1011;
-      --secondary-color: #181a1b;
-      --accent-color: #4169e1;
-      --text-color: #ffffff;
-      --text-muted: rgba(255, 255, 255, 0.7);
+      --primary-color: #ffffff;
+      --secondary-color: #f5f5f5;
+      --accent-color: #333333;
+      --text-color: #333333;
+      --text-muted: #777777;
       --transition-speed: 0.3s;
     }
 
@@ -90,7 +90,7 @@
 
     .btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(65, 105, 225, 0.3);
+      box-shadow: 0 10px 20px rgba(51, 51, 51, 0.3);
     }
 
     /* Header Styles */
@@ -101,11 +101,12 @@
       width: 100%;
       z-index: 1000;
       padding: 1rem 0;
-      background-color: #0e1011;
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     header.scrolled {
-      background-color: rgba(14, 16, 17, 0.95);
+      background-color: rgba(255, 255, 255, 0.95);
       padding: 1rem 0;
       backdrop-filter: blur(10px);
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
@@ -117,50 +118,48 @@
       align-items: center;
     }
 
-/* Add these styles for desktop navigation */
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
-  margin-left: 10px;
-}
-nav ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: var(--accent-color);
+      margin-left: 10px;
+    }
 
-nav ul li {
-  margin-left: 30px;
-}
+    nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
 
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  transition: color 0.3s ease;
-}
+    nav ul li {
+      margin-left: 30px;
+    }
 
-nav ul li a:hover {
-  color: #4169e1;
-}
+    nav ul li a {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
 
-.contact-btn {
-  background-color: #4169e1;
-  color: white;
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-weight: 500;
-  transition: background-color 0.3s ease;
-}
+    nav ul li a:hover {
+      color: #777777;
+    }
 
-.contact-btn:hover {
-  background-color: #3050c7;
-}
+    .contact-btn {
+      background-color: var(--accent-color);
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+    }
 
-   
+    .contact-btn:hover {
+      background-color: #555555;
+    }
 
     nav a {
       color: var(--text-color);
@@ -180,130 +179,122 @@ nav ul li a:hover {
       transition: width var(--transition-speed);
     }
 
-   
-
     nav a:hover::after {
       width: 100%;
     }
 
-    
-
-    
-
     /* Mobile Menu */
     .mobile-menu-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 22px;
-  cursor: pointer;
-}
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 22px;
+      cursor: pointer;
+    }
 
-.mobile-menu-toggle span {
-  display: block;
-  height: 3px;
-  width: 100%;
-  background-color: white;
-  border-radius: 3px;
-  transition: all 0.3s ease;
-}
+    .mobile-menu-toggle span {
+      display: block;
+      height: 3px;
+      width: 100%;
+      background-color: var(--accent-color);
+      border-radius: 3px;
+      transition: all 0.3s ease;
+    }
 
-/* Mobile menu */
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 80%;
-  height: 100vh;
-  background-color: rgba(14, 16, 17, 0.98);
-  z-index: 999;
-  padding: 80px 40px 40px;
-  transition: right 0.4s ease;
-  overflow-y: auto;
-  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
-}
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      height: 100vh;
+      background-color: rgba(255, 255, 255, 0.98);
+      z-index: 999;
+      padding: 80px 40px 40px;
+      transition: right 0.4s ease;
+      overflow-y: auto;
+      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    }
 
-.mobile-menu.active {
-  right: 0;
-}
+    .mobile-menu.active {
+      right: 0;
+    }
 
-.mobile-menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+    .mobile-menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
 
-.mobile-menu ul li {
-  margin-bottom: 25px;
-}
+    .mobile-menu ul li {
+      margin-bottom: 25px;
+    }
 
-.mobile-menu ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 20px;
-  display: block;
-  padding: 10px 0;
-  transition: color 0.3s ease;
-}
+    .mobile-menu ul li a {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-size: 20px;
+      display: block;
+      padding: 10px 0;
+      transition: color 0.3s ease;
+    }
 
-.mobile-menu ul li a:hover {
-  color: #4169e1;
-}
+    .mobile-menu ul li a:hover {
+      color: #777777;
+    }
 
-/* Mobile responsive styles */
-@media screen and (max-width: 991px) {
-  nav {
-    display: none;
-  }
-  
-  .contact-btn {
-    display: none;
-  }
-  
-  .mobile-menu-toggle {
-    display: flex;
-  }
-  
-  .header-inner {
-    padding: 0 20px;
-  }
-}
+    @media screen and (max-width: 991px) {
+      nav {
+        display: none;
+      }
 
-/* For very small screens */
-@media screen and (max-width: 480px) {
-  .logo {
-    font-size: 20px;
-  }
-  
-  .mobile-menu {
-    width: 100%;
-  }
-}
+      .contact-btn {
+        display: none;
+      }
 
-/* Animation for menu toggle */
-.mobile-menu-toggle.active span:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
-}
+      .mobile-menu-toggle {
+        display: flex;
+      }
 
-.mobile-menu-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
+      .header-inner {
+        padding: 0 20px;
+      }
+    }
 
-.mobile-menu-toggle.active span:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
-}
+    @media screen and (max-width: 480px) {
+      .logo {
+        font-size: 20px;
+      }
 
-/* Add a body lock class to prevent scrolling when mobile menu is open */
-body.menu-open {
-  overflow: hidden;
-}
+      .mobile-menu {
+        width: 100%;
+      }
+    }
+
+    .mobile-menu-toggle.active span:nth-child(1) {
+      transform: translateY(9px) rotate(45deg);
+    }
+
+    .mobile-menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-menu-toggle.active span:nth-child(3) {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
 
     /* Hero Section */
     .hero {
       display: flex;
       min-height: 100vh;
       padding-top: 80px;
+      position: relative;
+      overflow: hidden;
+      background-color: var(--secondary-color);
     }
 
     .hero-image {
@@ -317,6 +308,7 @@ body.menu-open {
       height: 100%;
       object-fit: cover;
       display: block;
+      filter: grayscale(100%);
     }
 
     .hero-content {
@@ -333,12 +325,19 @@ body.menu-open {
       text-transform: uppercase;
       line-height: 1;
       margin-bottom: 2rem;
+      color: var(--accent-color);
     }
 
     .hero-description {
       font-size: 1.1rem;
       max-width: 600px;
       margin-bottom: 2rem;
+      color: var(--text-muted);
+    }
+
+    .hero-features {
+      margin-top: 2rem;
+      color: var(--text-muted);
     }
 
     .hero-cta {
@@ -346,20 +345,22 @@ body.menu-open {
     }
 
     /* Services Section */
-    .services {
-      background-color: var(--secondary-color);
+    /* .services {
+      background-color: var(--primary-color);
       padding: 5rem 0;
-    }
+    } */
 
     .section-title {
       font-size: 3.5rem;
       text-transform: uppercase;
       margin-bottom: 1.5rem;
+      color: var(--accent-color);
     }
 
     .section-subtitle {
       font-size: 1.5rem;
       margin-bottom: 4rem;
+      color: var(--text-muted);
     }
 
     .service-grid {
@@ -369,11 +370,12 @@ body.menu-open {
     }
 
     .service-card {
-      background-color: var(--primary-color);
+      background-color: var(--secondary-color);
       border-radius: 8px;
       padding: 2rem;
       transition: transform var(--transition-speed), box-shadow var(--transition-speed);
       height: 100%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     .service-card:hover {
@@ -385,10 +387,12 @@ body.menu-open {
       font-size: 1.75rem;
       text-transform: uppercase;
       margin-bottom: 1rem;
+      color: var(--accent-color);
     }
 
     .service-description {
       margin-bottom: 1.5rem;
+      color: var(--text-muted);
     }
 
     .service-list {
@@ -399,6 +403,7 @@ body.menu-open {
       margin-bottom: 0.5rem;
       position: relative;
       padding-left: 1.5rem;
+      color: var(--text-muted);
     }
 
     .service-list li::before {
@@ -412,6 +417,7 @@ body.menu-open {
     /* Testimonials Section */
     .testimonials {
       padding: 5rem 0;
+      background-color: var(--secondary-color);
     }
 
     .testimonial-grid {
@@ -421,11 +427,12 @@ body.menu-open {
     }
 
     .testimonial-card {
-      background-color: var(--secondary-color);
+      background-color: var(--primary-color);
       border-radius: 8px;
       padding: 2rem;
       transition: transform var(--transition-speed), box-shadow var(--transition-speed);
       height: 100%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     .testimonial-card:hover {
@@ -442,6 +449,7 @@ body.menu-open {
     .testimonial-text {
       font-style: italic;
       margin-bottom: 1.5rem;
+      color: var(--text-muted);
     }
 
     .testimonial-client {
@@ -449,111 +457,402 @@ body.menu-open {
       color: var(--text-muted);
     }
 
-    /* About Section */
-    .about {
-  background-color: var(--secondary-color);
-  padding: 5rem 0;
+
+    /* New Testonimoal */
+    /* Testimonials Showcase Section Styling */
+.testimonials-showcase {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0;
 }
 
-.about-content {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  margin: 0 auto;
-  max-width: 900px; /* Controls the maximum width of the centered content */
+.testimonials-showcase::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle at 10% 20%, rgba(0, 0, 0, 0.02) 0%, transparent 80%);
+  z-index: 1;
 }
 
-.about-text {
-  padding: 0 2rem;
+.testimonials-showcase .container {
+  position: relative;
+  z-index: 2;
 }
 
-.section-title {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-  text-transform: uppercase;
+/* Heading Styles */
+.showcase-title {
+  font-size: 2.5rem;
   font-weight: 700;
-}
-
-.about-text p {
   margin-bottom: 1.5rem;
-  font-size: 1.1rem;
-  line-height: 1.7;
+  color: #2d3748;
+  position: relative;
 }
 
-.about-text p strong {
-  font-size: 1.3rem;
+.showcase-title::after {
+  content: '';
   display: block;
-  margin-bottom: 1rem;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #4a6cf7, #00ccff);
+  margin: 15px auto 0;
+  border-radius: 2px;
 }
 
-.btn {
-  display: inline-block;
-  background-color: #4169e1;
+.showcase-description {
+  font-size: 1.1rem;
+  color: #4a5568;
+  max-width: 700px;
+  margin: 0 auto 60px;
+  line-height: 1.6;
+}
+
+/* Grid Layout */
+.success-stories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+/* Story Card Styling */
+.story-card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.story-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 0;
+  background: linear-gradient(180deg, #4a6cf7, #00ccff);
+  transition: height 0.6s ease;
+}
+
+.story-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.story-card:hover::before {
+  height: 100%;
+}
+
+/* Story Card Header */
+.story-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.story-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0;
+  transition: transform 0.3s ease;
+}
+
+.story-card:hover .story-title {
+  transform: translateX(10px);
+}
+
+.story-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f8f9fa;
+  color: #4a6cf7;
+  transition: all 0.3s ease;
+}
+
+.story-card:hover .story-icon {
+  background: #4a6cf7;
   color: white;
-  padding: 12px 30px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: 500;
-  margin-top: 1rem;
-  transition: background-color 0.3s ease;
+  transform: rotate(360deg);
 }
 
-.btn:hover {
-  background-color: #3050c7;
+/* Quote Styling */
+.story-quote {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4a5568;
+  margin-bottom: 25px;
+  position: relative;
+  padding-left: 25px;
 }
 
-/* Responsive design for smaller screens */
-@media screen and (max-width: 768px) {
-  .about {
-    padding: 3rem 0;
+.story-quote::before {
+  content: '"';
+  font-size: 3rem;
+  color: rgba(74, 108, 247, 0.1);
+  position: absolute;
+  top: -15px;
+  left: 0;
+  font-family: serif;
+}
+
+/* Result Styling */
+.story-result {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.result-highlight {
+  display: inline-block;
+  padding: 8px 15px;
+  background: linear-gradient(135deg, rgba(74, 108, 247, 0.1) 0%, rgba(0, 204, 255, 0.1) 100%);
+  border-radius: 30px;
+  color: #4a6cf7;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.story-card:hover .result-highlight {
+  background: linear-gradient(135deg, #4a6cf7 0%, #00ccff 100%);
+  color: white;
+}
+
+/* Animation Classes */
+.slide-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 0.8s forwards;
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.zoom-in {
+  opacity: 0;
+  transform: scale(0.9);
+  animation: zoomIn 0.8s forwards;
+  animation-delay: calc(var(--delay, 0) * 1ms);
+}
+
+@keyframes zoomIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .success-stories-grid {
+    grid-template-columns: 1fr;
   }
   
-  .section-title {
-    font-size: 2.5rem;
-  }
-  
-  .about-text {
-    padding: 0 1rem;
-  }
-}
-
-/* For very small screens */
-@media screen and (max-width: 480px) {
-  .section-title {
+  .showcase-title {
     font-size: 2rem;
   }
   
-  .about-text p {
+  .showcase-description {
     font-size: 1rem;
+    margin-bottom: 40px;
   }
   
-  .about-text p strong {
-    font-size: 1.1rem;
+  .story-card {
+    padding: 25px;
   }
 }
+    /* About Section */
+    .about {
+      background-color: var(--primary-color);
+      padding: 5rem 0;
+    }
 
-/* Animation classes */
-.slide-in-left {
-  animation: slideInLeft 0.8s ease-out both;
-  animation-play-state: paused;
+    .about-content {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      margin: 0 auto;
+      max-width: 900px;
+    }
+
+    .about-text {
+      padding: 0 2rem;
+    }
+
+    .section-title {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--accent-color);
+    }
+
+    .about-text p {
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+    }
+
+    .about-text p strong {
+      font-size: 1.3rem;
+      display: block;
+      margin-bottom: 1rem;
+      color: var(--accent-color);
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 500;
+      margin-top: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #555555;
+    }
+
+    @media screen and (max-width: 768px) {
+      .about {
+        padding: 3rem 0;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+      }
+
+      .about-text {
+        padding: 0 1rem;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .about-text p {
+        font-size: 1rem;
+      }
+
+      .about-text p strong {
+        font-size: 1.1rem;
+      }
+    }
+
+    /* Animation classes */
+    .slide-in-left {
+      animation: slideInLeft 0.8s ease-out both;
+      animation-play-state: paused;
+      opacity: 1;
+    }
+
+    .slide-in-left.animate {
+      animation-play-state: running;
+    }
+
+    @keyframes slideInLeft {
+      0% {
+        transform: translateX(-50px);
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+/* Add this CSS to your existing stylesheet */
+
+/* Updated CSS to ensure all services are visible */
+.services-section {
+  min-height: 300vh;
+  position: relative;
+  overflow: visible; /* Changed from hidden to allow scrolling to last item */
+}
+
+.ogo-service {
+  height: 100vh;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 1; /* Ensure proper stacking */
+}
+
+/* Explicitly set z-index for each service to ensure proper stacking */
+.ogo-service:nth-child(1) { z-index: 4; }
+.ogo-service:nth-child(2) { z-index: 3; }
+.ogo-service:nth-child(3) { z-index: 2; }
+.ogo-service:nth-child(4) { z-index: 1; } /* Last service */
+
+/* First service visible by default */
+.ogo-service:first-child {
   opacity: 1;
 }
 
-.slide-in-left.animate {
-  animation-play-state: running;
+/* Make sure the last service is reachable by scroll */
+.ogo-service:last-child {
+  margin-bottom: 10vh; /* Add some space after the last service */
 }
 
-@keyframes slideInLeft {
-  0% {
-    transform: translateX(-50px);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
+/* Rest of your CSS remains the same */
+.ogo-service .img-box {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
 }
 
+.ogo-service .img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ogo-service .content {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #f8f8f8;
+}
+
+@media (max-width: 768px) {
+  .ogo-service {
+    flex-direction: column;
+  }
+  .ogo-service .img-box, 
+  .ogo-service .content {
+    width: 100%;
+    height: 50vh;
+  }
+}
     /* Footer */
     footer {
       background-color: var(--primary-color);
@@ -570,6 +869,7 @@ body.menu-open {
     .footer-column h3 {
       font-size: 1.5rem;
       margin-bottom: 1.5rem;
+      color: var(--accent-color);
     }
 
     .footer-links {
@@ -590,7 +890,7 @@ body.menu-open {
     }
 
     .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
       padding-top: 2rem;
       display: flex;
       justify-content: space-between;
@@ -639,15 +939,14 @@ body.menu-open {
 
     .back-to-top:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(65, 105, 225, 0.3);
+      box-shadow: 0 10px 20px rgba(51, 51, 51, 0.3);
     }
 
-    /* Responsive Design */
     @media (max-width: 1200px) {
       .hero-title {
         font-size: 4rem;
       }
-      
+
       .section-title {
         font-size: 3rem;
       }
@@ -657,27 +956,27 @@ body.menu-open {
       nav ul {
         display: none;
       }
-      
+
       .mobile-menu-toggle {
         display: flex;
       }
-      
+
       .hero {
         flex-direction: column;
       }
-      
+
       .hero-image {
         height: 50vh;
       }
-      
+
       .hero-content {
         padding: 3rem 2rem;
       }
-      
+
       .about-content {
         grid-template-columns: 1fr;
       }
-      
+
       .about-image {
         order: -1;
       }
@@ -687,24 +986,24 @@ body.menu-open {
       .hero-title {
         font-size: 3rem;
       }
-      
+
       .section-title {
         font-size: 2.5rem;
       }
-      
+
       .section-subtitle {
         font-size: 1.2rem;
       }
-      
+
       .service-grid,
       .testimonial-grid {
         grid-template-columns: 1fr;
       }
-      
+
       .footer-grid {
         grid-template-columns: 1fr 1fr;
       }
-      
+
       .footer-bottom {
         flex-direction: column;
         gap: 1rem;
@@ -715,11 +1014,11 @@ body.menu-open {
       .hero-title {
         font-size: 2.5rem;
       }
-      
+
       .footer-grid {
         grid-template-columns: 1fr;
       }
-      
+
       .container {
         padding: 0 1.5rem;
       }
@@ -798,7 +1097,7 @@ body.menu-open {
       <img src="image-380.png" alt="OGO LABS Digital Transformation">
     </div>
     <div class="hero-content">
-      <h1 class="hero-title fade-in">©ogo <br> Labs</h1>
+      <h1 class="hero-title fade-in">ogo <br> Labs</h1>
       <p class="hero-description fade-in">
         Your 360° Business Growth & Digital Transformation Partner. At OGO LABS, we empower businesses with end-to-end solutions for startup growth, digital transformation, and cutting-edge technology implementation.
       </p>
@@ -823,134 +1122,165 @@ body.menu-open {
   </section>
 
   <!-- Services Section -->
-  <section class="services py-section" id="services">
-    <div class="container">
-      <h2 class="section-title fade-in">Services</h2>
-      <p class="section-subtitle fade-in">
-        Discover our tailored services designed to elevate your brand and enhance user experience.
-      </p>
-      
-      <div class="service-grid">
-        <!-- Service 1 -->
-        <div class="service-card fade-in" data-delay="0">
-          <h3 class="service-title">Business Growth & Consulting</h3>
-          <p class="service-description">
-            Helping businesses scale and succeed through expert guidance and innovative strategies.
-          </p>
-          <ul class="service-list">
-            <li>Startup Consulting</li>
-            <li>Corporate Digitalization</li>
-            <li>Market Strategy & Branding</li>
-            <li>Product Design & Development</li>
-            <li>E-commerce Platform Development</li>
-            <li>Custom Logo & Brand Identity Design</li>
-            <li>Technology Stack Consultation & Development</li>
-          </ul>
+  <section class="services-section" id="services">
+    <div class="services-section">
+      <!-- Service 1 -->
+      <div class="ogo-service">
+        <div class="img-box">
+          <img src="image1.png" alt="Web Development">
         </div>
-        
-        <!-- Service 2 -->
-        <div class="service-card fade-in" data-delay="200">
-          <h3 class="service-title">Digital Transformation & Web Solutions</h3>
-          <p class="service-description">
-            We develop robust web and mobile solutions, integrate AI and blockchain tech, and optimize digital presence.
-          </p>
-          <ul class="service-list">
-            <li>Website & Web App Development</li>
-            <li>AI & Automation</li>
-            <li>Blockchain Solutions</li>
-          </ul>
+        <div class="content">
+          <h2>Web Development</h2>
+          <p>Our team specializes in creating responsive, user-friendly websites that will help your business stand out. We use the latest technologies to ensure your site is fast, secure, and optimized for search engines.</p>
+          <p>From simple landing pages to complex e-commerce platforms, we have the expertise to bring your vision to life.</p>
+          <!-- <a href="#" class="btn">Learn More</a> -->
         </div>
-        
-        <!-- Service 3 -->
-        <div class="service-card fade-in" data-delay="400">
-          <h3 class="service-title">Game Development & Interactive Tech</h3>
-          <p class="service-description">
-            Bringing interactive experiences to life through game design and immersive technology.
-          </p>
-          <ul class="service-list">
-            <li>Web & Mobile Game Development</li>
-            <li>Metaverse & AR/VR Solutions</li>
-            <li>NFT & Web3 Gaming</li>
-          </ul>
+      </div>
+    
+      <!-- Service 2 -->
+      <div class="ogo-service">
+        <div class="img-box">
+          <img src="image2.png" alt="UI/UX Design">
         </div>
-        
-        <!-- Service 4 -->
-        <div class="service-card fade-in" data-delay="600">
-          <h3 class="service-title">IoT, Hardware & R&D Solutions</h3>
-          <p class="service-description">
-            Connecting the physical and digital worlds through smart devices and cutting-edge hardware.
-          </p>
-          <ul class="service-list">
-            <li>Smart IoT Solutions</li>
-            <li>Custom Hardware Development</li>
-            <li>Research & Development (R&D)</li>
-          </ul>
+        <div class="content">
+          <h2>UI/UX Design</h2>
+          <p>Creating beautiful, intuitive interfaces is our passion. We combine aesthetics with functionality to deliver designs that not only look great but also provide an exceptional user experience.</p>
+          <p>Our design process is collaborative, ensuring that your brand identity and vision are reflected in every aspect of the final product.</p>
+          <!-- <a href="#" class="btn">Learn More</a> -->
+        </div>
+      </div>
+    
+      <!-- Service 3 -->
+      <div class="ogo-service">
+        <div class="img-box">
+          <img src="image4.png" alt="Digital Marketing">
+        </div>
+        <div class="content">
+          <h2>Digital Marketing</h2>
+          <p>Boost your online presence with our comprehensive digital marketing services. From SEO and content marketing to social media management and PPC campaigns, we have the tools and expertise to help you reach your target audience.</p>
+          <p>We develop data-driven strategies tailored to your specific goals and market.</p>
+          <!-- <a href="#" class="btn">Learn More</a> -->
+        </div>
+      </div>
+    
+      <!-- Service 4 -->
+      <div class="ogo-service">
+        <div class="img-box">
+          <img src="image3.png" alt="Mobile App Development">
+        </div>
+        <div class="content">
+          <h2>Mobile App Development</h2>
+          <p>We build native and cross-platform mobile applications that deliver seamless experiences across all devices. Our development team focuses on creating intuitive, high-performance apps that users love.</p>
+          <p>From concept to deployment, we handle every aspect of the app development process with precision and care.</p>
+          <!-- <a href="#" class="btn">Learn More</a> -->
         </div>
       </div>
     </div>
   </section>
 
   <!-- Testimonials Section -->
-  <section class="testimonials py-section" id="work">
+  <section class="testimonials-showcase py-section" id="success-stories">
     <div class="container">
-      <h2 class="section-title text-center fade-in">Client Success Stories</h2>
-      <p class="section-subtitle text-center fade-in">
+      <h2 class="showcase-title text-center slide-up">Client Success Stories</h2>
+      <p class="showcase-description text-center slide-up" data-delay="100">
         Transforming Businesses, Driving Growth. Here's how we've helped businesses achieve exponential growth through our expertise.
       </p>
       
-      <div class="testimonial-grid">
-        <!-- Testimonial 1 -->
-        <div class="testimonial-card fade-in" data-delay="0">
-          <h3 class="testimonial-title">Tech Startup Accelerator</h3>
-          <p class="testimonial-text">
+      <div class="success-stories-grid">
+        <!-- Story 1 -->
+        <div class="story-card zoom-in" data-delay="150">
+          <div class="story-header">
+            <h3 class="story-title">Tech Startup Accelerator</h3>
+            <div class="story-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M13 12h7l-8 8-8-8h7V4h2z" fill="currentColor"/></svg>
+            </div>
+          </div>
+          <p class="story-quote">
             "Their strategic approach completely transformed our brand. We've seen a huge increase in recognition and client engagement."
           </p>
-          <p class="testimonial-result">From Concept to $10M Valuation</p>
+          <div class="story-result">
+            <span class="result-highlight">From Concept to $10M Valuation</span>
+          </div>
         </div>
         
-        <!-- Testimonial 2 -->
-        <div class="testimonial-card fade-in" data-delay="200">
-          <h3 class="testimonial-title">Blockchain & Web3 Innovation</h3>
-          <p class="testimonial-text">
+        <!-- Story 2 -->
+        <div class="story-card zoom-in" data-delay="300">
+          <div class="story-header">
+            <h3 class="story-title">Blockchain & Web3 Innovation</h3>
+            <div class="story-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-5h2v2h-2v-2zm0-8h2v6h-2V7z" fill="currentColor"/></svg>
+            </div>
+          </div>
+          <p class="story-quote">
             "Working with them was easy and efficient. They perfectly captured our vision, and the results were outstanding."
           </p>
-          <p class="testimonial-result">Powering a Decentralized Marketplace</p>
+          <div class="story-result">
+            <span class="result-highlight">Powering a Decentralized Marketplace</span>
+          </div>
         </div>
         
-        <!-- Testimonial 3 -->
-        <div class="testimonial-card fade-in" data-delay="400">
-          <h3 class="testimonial-title">E-Commerce Brand Revamp</h3>
-          <p class="testimonial-text">
+        <!-- Story 3 -->
+        <div class="story-card zoom-in" data-delay="450">
+          <div class="story-header">
+            <h3 class="story-title">E-Commerce Brand Revamp</h3>
+            <div class="story-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M4 6.414L.757 3.172l1.415-1.415L5.414 5h15.242a1 1 0 0 1 .958 1.287l-2.4 8a1 1 0 0 1-.958.713H6v2h11v2H5a1 1 0 0 1-1-1V6.414zM6 7v6h11.512l1.8-6H6zm-.5 16a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm12 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" fill="currentColor"/></svg>
+            </div>
+          </div>
+          <p class="story-quote">
             "The website they created is stunning, user-friendly, and has boosted our online conversions significantly. Highly recommend!"
           </p>
-          <p class="testimonial-result">Increasing Revenue by 300%</p>
+          <div class="story-result">
+            <span class="result-highlight">Increasing Revenue by 300%</span>
+          </div>
         </div>
         
-        <!-- Testimonial 4 -->
-        <div class="testimonial-card fade-in" data-delay="600">
-          <h3 class="testimonial-title">IoT Smart Factory</h3>
-          <p class="testimonial-text">
+        <!-- Story 4 -->
+        <div class="story-card zoom-in" data-delay="600">
+          <div class="story-header">
+            <h3 class="story-title">IoT Smart Factory</h3>
+            <div class="story-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M21 3a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h18zm-1 2H4v14h16V5zm-2 2v2H6V7h12z" fill="currentColor"/></svg>
+            </div>
+          </div>
+          <p class="story-quote">
             "Our new branding resonated with our audience immediately. We've received so many compliments and new business inquiries."
           </p>
-          <p class="testimonial-result">Reducing Operational Costs by 40%</p>
+          <div class="story-result">
+            <span class="result-highlight">Reducing Operational Costs by 40%</span>
+          </div>
         </div>
         
-        <!-- Testimonial 5 -->
-        <div class="testimonial-card fade-in" data-delay="800">
-          <h3 class="testimonial-title">Enterprise AI Chatbot</h3>
-          <p class="testimonial-text">
+        <!-- Story 5 -->
+        <div class="story-card zoom-in" data-delay="750">
+          <div class="story-header">
+            <h3 class="story-title">Enterprise AI Chatbot</h3>
+            <div class="story-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M10 3h4a8 8 0 1 1 0 16v3.5c-5-2-12-5-12-11.5a8 8 0 0 1 8-8zm2 14h2a6 6 0 1 0 0-12h-4a6 6 0 0 0-6 6c0 3.61 2.462 5.966 8 8.48V17z" fill="currentColor"/></svg>
+            </div>
+          </div>
+          <p class="story-quote">
             "Their designs are not only beautiful but effective. Our sales increased by 30% post-launch. Incredible experience!"
           </p>
-          <p class="testimonial-result">Automating Customer Support</p>
+          <div class="story-result">
+            <span class="result-highlight">Automating Customer Support</span>
+          </div>
         </div>
         
-        <!-- Testimonial 6 -->
-        <div class="testimonial-card fade-in" data-delay="1000">
-          <h3 class="testimonial-title">UX Design Transformation</h3>
-          <p class="testimonial-text">
+        <!-- Story 6 -->
+        <div class="story-card zoom-in" data-delay="900">
+          <div class="story-header">
+            <h3 class="story-title">UX Design Transformation</h3>
+            <div class="story-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-5-7h2a3 3 0 0 0 6 0h2a5 5 0 0 1-10 0z" fill="currentColor"/></svg>
+            </div>
+          </div>
+          <p class="story-quote">
             "Their UX design made our platform more intuitive and enjoyable to use. Customer satisfaction has dramatically improved."
           </p>
-          <p class="testimonial-result">Improved User Experience</p>
+          <div class="story-result">
+            <span class="result-highlight">Improved User Experience</span>
+          </div>
         </div>
       </div>
     </div>
@@ -1046,500 +1376,650 @@ body.menu-open {
 
   <script>
     // Wait for DOM to be fully loaded
- // Wait for DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-  // Elements
-  const header = document.getElementById('header');
-  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const mobileLinks = document.querySelectorAll('.mobile-link');
-  const backToTopButton = document.getElementById('backToTop');
-  const body = document.body;
+    document.addEventListener('DOMContentLoaded', function() {
+      // Elements
+      const header = document.getElementById('header');
+      const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+      const backToTopButton = document.getElementById('backToTop');
+      const body = document.body;
+// Fade-in animation for OGO service cards
+
+const services = document.querySelectorAll('.ogo-service');
+  const servicesSection = document.querySelector('.services-section');
   
-  // Add missing services content
-  const addMissingContent = () => {
-    // Additional services content
-    const additionalServices = [
-      {
-        title: "Mobile App Development",
-        description: "Creating native and cross-platform mobile applications that engage users and drive business growth.",
-        items: [
-          "iOS & Android Development",
-          "Cross-Platform Solutions",
-          "App Store Optimization",
-          "Mobile UI/UX Design",
-          "App Maintenance & Support"
-        ]
-      },
-      {
-        title: "AI & Machine Learning",
-        description: "Implementing cutting-edge AI solutions to automate processes and gain valuable insights from your data.",
-        items: [
-          "Predictive Analytics",
-          "Natural Language Processing",
-          "Machine Learning Models",
-          "AI Integration Services",
-          "Chatbots & Virtual Assistants"
-        ]
-      },
-      {
-        title: "Blockchain Solutions",
-        description: "Leveraging blockchain technology to create secure, transparent, and efficient business processes.",
-        items: [
-          "Smart Contract Development",
-          "DeFi Applications",
-          "NFT Marketplaces",
-          "Private Blockchain Networks",
-          "Crypto Wallet Integration"
-        ]
-      },
-      {
-        title: "UX/UI Design",
-        description: "Crafting intuitive and engaging user experiences that convert visitors into customers.",
-        items: [
-          "User Research & Persona Development",
-          "Wireframing & Prototyping",
-          "Visual Design & Branding",
-          "Usability Testing",
-          "Design Systems"
-        ]
-      }
-    ];
+  if (services.length && servicesSection) {
+    // Log how many services were found for debugging
+    console.log("Found " + services.length + " services");
     
-    // Check if we need to add more service cards
-    const serviceGrid = document.querySelector('.service-grid');
-    if (serviceGrid && serviceGrid.children.length < 8) {
-      // Add the additional services
-      additionalServices.forEach((service, index) => {
-        const serviceCard = document.createElement('div');
-        serviceCard.className = 'service-card fade-in';
-        serviceCard.setAttribute('data-delay', (600 + (index * 200)).toString());
+    // Set the height of the services section based on number of services
+    // Adding some extra space to ensure last service is fully scrollable
+    const totalHeight = (services.length + 0.1) * window.innerHeight;
+    servicesSection.style.height = totalHeight + 'px';
+    
+    // Make first service visible initially
+    services[0].style.opacity = 1;
+    
+    // Initialize all services with the proper styles
+    services.forEach((service, i) => {
+      // Ensure all services have initial styles
+      service.style.position = 'sticky';
+      service.style.top = '0';
+      service.style.height = '100vh';
+      service.style.opacity = i === 0 ? '1' : '0';
+      
+      // Log service details for debugging
+      console.log("Service " + (i+1) + " initialized");
+    });
+    
+    // Handle scroll events for fade transitions
+    window.addEventListener('scroll', function() {
+      // Get the scroll position relative to the services section
+      const sectionRect = servicesSection.getBoundingClientRect();
+      const sectionTop = window.scrollY - sectionRect.top;
+      const scrollPosition = window.scrollY - servicesSection.offsetTop;
+      
+      // Log current scroll position for debugging
+      console.log("Scroll position: " + scrollPosition);
+      
+      // Determine which service should be visible based on scroll position
+      const serviceHeight = window.innerHeight;
+      
+      services.forEach((service, index) => {
+        const startPos = index * serviceHeight;
+        const endPos = startPos + serviceHeight;
         
-        let serviceItems = '';
-        service.items.forEach(item => {
-          serviceItems += `<li>${item}</li>`;
-        });
+        // Log visibility check for last service
+        if (index === services.length - 1) {
+          console.log("Last service check: scroll=" + scrollPosition + 
+                     ", startPos=" + startPos + ", endPos=" + endPos);
+        }
         
-        serviceCard.innerHTML = `
-          <h3 class="service-title">${service.title}</h3>
-          <p class="service-description">${service.description}</p>
-          <ul class="service-list">
-            ${serviceItems}
-          </ul>
-        `;
-        
-        serviceGrid.appendChild(serviceCard);
+        // Calculate opacity based on scroll position
+        if (scrollPosition >= startPos && scrollPosition < endPos) {
+          // This service should be visible and fading in
+          const scrollInSection = scrollPosition - startPos;
+          const fadeInPoint = serviceHeight * 0.1; // Start fading in at 10% of section
+          
+          if (scrollInSection < fadeInPoint) {
+            // Fade in
+            const opacity = scrollInSection / fadeInPoint;
+            service.style.opacity = Math.min(opacity, 1);
+          } else {
+            // Fully visible
+            service.style.opacity = 1;
+          }
+          
+          // Log when a service becomes visible
+          console.log("Service " + (index+1) + " visible with opacity " + service.style.opacity);
+        } else if (scrollPosition >= endPos && scrollPosition < endPos + serviceHeight * 0.1) {
+          // This service should be fading out
+          const scrollPastSection = scrollPosition - endPos;
+          const fadeOutPoint = serviceHeight * 0.1; // Fade out over 10% of the next section
+          
+          const opacity = 1 - (scrollPastSection / fadeOutPoint);
+          service.style.opacity = Math.max(opacity, 0);
+        } else if (scrollPosition < startPos || scrollPosition >= endPos) {
+          // This service should be invisible
+          service.style.opacity = 0;
+        }
       });
-    }
+    });
     
-    // Add blog section if missing
-    if (!document.getElementById('blogs')) {
-      const aboutSection = document.getElementById('about');
-      if (aboutSection) {
-        const blogsSection = document.createElement('section');
-        blogsSection.id = 'blogs';
-        blogsSection.className = 'py-section';
-        
-        blogsSection.innerHTML = `
-          <div class="container">
-            <h2 class="section-title text-center fade-in">Latest Insights</h2>
-            <p class="section-subtitle text-center fade-in">
-              Stay updated with the latest trends, technologies, and business strategies through our blog.
-            </p>
-            <div class="service-grid">
-              <div class="service-card fade-in" data-delay="0">
-                <h3 class="service-title">The Future of AI in Business</h3>
-                <p class="service-description">
-                  Explore how artificial intelligence is transforming business operations and customer experiences.
+    // Force an initial scroll event to position everything correctly
+    window.dispatchEvent(new Event('scroll'));
+  }
+
+
+  // Testonimal Code
+
+  document.addEventListener('DOMContentLoaded', function() {
+  // Initialize animations with proper delays
+  const animatedElements = document.querySelectorAll('.slide-up, .zoom-in');
+  
+  animatedElements.forEach(element => {
+    const delay = element.getAttribute('data-delay') || 0;
+    element.style.setProperty('--delay', delay);
+  });
+  
+  // Setting up Intersection Observer for triggering animations on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animationPlayState = 'running';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    root: null,
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+  
+  // Observe all animated elements
+  animatedElements.forEach(element => {
+    element.style.animationPlayState = 'paused';
+    observer.observe(element);
+  });
+  
+  // Add hover effects and interactivity
+  const storyCards = document.querySelectorAll('.story-card');
+  
+  storyCards.forEach((card, index) => {
+    // Add subtle movement on mousemove for each card
+    card.addEventListener('mousemove', function(e) {
+      const x = e.clientX - this.getBoundingClientRect().left;
+      const y = e.clientY - this.getBoundingClientRect().top;
+      
+      const centerX = this.offsetWidth / 2;
+      const centerY = this.offsetHeight / 2;
+      
+      const moveX = (x - centerX) / 20;
+      const moveY = (y - centerY) / 20;
+      
+      this.style.transform = `translateY(-10px) perspective(600px) rotateX(${-moveY}deg) rotateY(${moveX}deg)`;
+    });
+    
+    // Reset on mouseout
+    card.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateY(-10px)';
+    });
+    
+    // Reset all transformations when not hovering
+    card.addEventListener('mouseout', function() {
+      setTimeout(() => {
+        if (!this.matches(':hover')) {
+          this.style.transform = '';
+        }
+      }, 100);
+    });
+  });
+});
+      // Add missing services content
+      const addMissingContent = () => {
+        // Additional services content
+        const additionalServices = [
+          {
+            title: "Mobile App Development",
+            description: "Creating native and cross-platform mobile applications that engage users and drive business growth.",
+            items: [
+              "iOS & Android Development",
+              "Cross-Platform Solutions",
+              "App Store Optimization",
+              "Mobile UI/UX Design",
+              "App Maintenance & Support"
+            ]
+          },
+          {
+            title: "AI & Machine Learning",
+            description: "Implementing cutting-edge AI solutions to automate processes and gain valuable insights from your data.",
+            items: [
+              "Predictive Analytics",
+              "Natural Language Processing",
+              "Machine Learning Models",
+              "AI Integration Services",
+              "Chatbots & Virtual Assistants"
+            ]
+          },
+          {
+            title: "Blockchain Solutions",
+            description: "Leveraging blockchain technology to create secure, transparent, and efficient business processes.",
+            items: [
+              "Smart Contract Development",
+              "DeFi Applications",
+              "NFT Marketplaces",
+              "Private Blockchain Networks",
+              "Crypto Wallet Integration"
+            ]
+          },
+          {
+            title: "UX/UI Design",
+            description: "Crafting intuitive and engaging user experiences that convert visitors into customers.",
+            items: [
+              "User Research & Persona Development",
+              "Wireframing & Prototyping",
+              "Visual Design & Branding",
+              "Usability Testing",
+              "Design Systems"
+            ]
+          }
+        ];
+
+        // Check if we need to add more service cards
+        const serviceGrid = document.querySelector('.service-grid');
+        if (serviceGrid && serviceGrid.children.length < 8) {
+          // Add the additional services
+          additionalServices.forEach((service, index) => {
+            const serviceCard = document.createElement('div');
+            serviceCard.className = 'service-card fade-in';
+            serviceCard.setAttribute('data-delay', (600 + (index * 200)).toString());
+
+            let serviceItems = '';
+            service.items.forEach(item => {
+              serviceItems += `<li>${item}</li>`;
+            });
+
+            serviceCard.innerHTML = `
+              <h3 class="service-title">${service.title}</h3>
+              <p class="service-description">${service.description}</p>
+              <ul class="service-list">
+                ${serviceItems}
+              </ul>
+            `;
+
+            serviceGrid.appendChild(serviceCard);
+          });
+        }
+
+        // Add blog section if missing
+        if (!document.getElementById('blogs')) {
+          const aboutSection = document.getElementById('about');
+          if (aboutSection) {
+            const blogsSection = document.createElement('section');
+            blogsSection.id = 'blogs';
+            blogsSection.className = 'py-section';
+
+            blogsSection.innerHTML = `
+              <div class="container">
+                <h2 class="section-title text-center fade-in">Latest Insights</h2>
+                <p class="section-subtitle text-center fade-in">
+                  Stay updated with the latest trends, technologies, and business strategies through our blog.
                 </p>
-                <a href="#" class="btn">Read More</a>
+                <div class="service-grid">
+                  <div class="service-card fade-in" data-delay="0">
+                    <h3 class="service-title">The Future of AI in Business</h3>
+                    <p class="service-description">
+                      Explore how artificial intelligence is transforming business operations and customer experiences.
+                    </p>
+                    <a href="#" class="btn">Read More</a>
+                  </div>
+                  <div class="service-card fade-in" data-delay="200">
+                    <h3 class="service-title">Blockchain Beyond Cryptocurrency</h3>
+                    <p class="service-description">
+                      Discover practical applications of blockchain technology across various industries.
+                    </p>
+                    <a href="#" class="btn">Read More</a>
+                  </div>
+                  <div class="service-card fade-in" data-delay="400">
+                    <h3 class="service-title">Optimizing UX for Conversion</h3>
+                    <p class="service-description">
+                      Learn key strategies to enhance user experience and boost conversion rates.
+                    </p>
+                    <a href="#" class="btn">Read More</a>
+                  </div>
+                </div>
               </div>
-              <div class="service-card fade-in" data-delay="200">
-                <h3 class="service-title">Blockchain Beyond Cryptocurrency</h3>
-                <p class="service-description">
-                  Discover practical applications of blockchain technology across various industries.
-                </p>
-                <a href="#" class="btn">Read More</a>
-              </div>
-              <div class="service-card fade-in" data-delay="400">
-                <h3 class="service-title">Optimizing UX for Conversion</h3>
-                <p class="service-description">
-                  Learn key strategies to enhance user experience and boost conversion rates.
-                </p>
-                <a href="#" class="btn">Read More</a>
-              </div>
-            </div>
+            `;
+
+            aboutSection.parentNode.insertBefore(blogsSection, aboutSection.nextSibling);
+          }
+        }
+      };
+
+      // Call the function to add missing content
+      addMissingContent();
+
+      // Header scroll effect
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+
+        // Back to top button visibility
+        if (window.scrollY > 300) {
+          backToTopButton.classList.add('visible');
+        } else {
+          backToTopButton.classList.remove('visible');
+        }
+
+        // Check for elements to animate on scroll
+        animateOnScroll();
+      });
+
+      // Mobile menu toggle
+      mobileMenuToggle.addEventListener('click', function() {
+        mobileMenu.classList.toggle('active');
+
+        // Transform hamburger to X
+        const spans = mobileMenuToggle.querySelectorAll('span');
+        if (mobileMenu.classList.contains('active')) {
+          spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+          spans[1].style.opacity = '0';
+          spans[2].style.transform = 'rotate(-45deg) translate(7px, -7px)';
+          // Prevent scrolling when menu is open
+          document.body.style.overflow = 'hidden';
+        } else {
+          spans[0].style.transform = 'none';
+          spans[1].style.opacity = '1';
+          spans[2].style.transform = 'none';
+          // Allow scrolling when menu is closed
+          document.body.style.overflow = 'auto';
+        }
+      });
+
+      // Close mobile menu when clicking a link
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          mobileMenu.classList.remove('active');
+          const spans = mobileMenuToggle.querySelectorAll('span');
+          spans[0].style.transform = 'none';
+          spans[1].style.opacity = '1';
+          spans[2].style.transform = 'none';
+          document.body.style.overflow = 'auto';
+        });
+      });
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            // Calculate header height to offset scroll position
+            const headerHeight = header.offsetHeight;
+            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+      // Animation on scroll
+      function animateOnScroll() {
+        const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
+
+        animatedElements.forEach(element => {
+          const elementPosition = element.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+          const delay = element.getAttribute('data-delay') || 0;
+
+          if (elementPosition < windowHeight - 100) {
+            setTimeout(() => {
+              element.classList.add('visible');
+            }, delay);
+          }
+        });
+      }
+
+      // Initialize AOS animation library if available
+      if (typeof AOS !== 'undefined') {
+        AOS.init({
+          duration: 800,
+          offset: 100,
+          once: true
+        });
+      }
+
+      // Initialize GSAP animations if available
+      if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        // Register ScrollTrigger plugin
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero section animations
+        gsap.from('.hero-title', {
+          duration: 1,
+          y: 50,
+          ease: 'power3.out'
+        });
+
+        gsap.from('.hero-description', {
+          duration: 1,
+          y: 30,
+          delay: 0.3,
+          ease: 'power3.out'
+        });
+
+        gsap.from('.hero-features', {
+          duration: 1,
+          y: 30,
+          delay: 0.5,
+          ease: 'power3.out'
+        });
+
+        gsap.from('.hero-cta', {
+          duration: 1,
+          y: 30,
+          delay: 0.7,
+          ease: 'power3.out'
+        });
+
+        // Section titles animation
+        gsap.utils.toArray('.section-title').forEach(title => {
+          gsap.from(title, {
+            scrollTrigger: {
+              trigger: title,
+              start: 'top 80%'
+            },
+            y: 30,
+            duration: 0.8
+          });
+        });
+
+        // Service cards staggered animation
+        gsap.from('.service-card', {
+          scrollTrigger: {
+            trigger: '.service-grid',
+            start: 'top 80%'
+          },
+          y: 50,
+          duration: 0.8,
+          stagger: 0.2,
+          ease: 'power3.out'
+        });
+
+        // Testimonial cards staggered animation
+        gsap.from('.testimonial-card', {
+          scrollTrigger: {
+            trigger: '.testimonial-grid',
+            start: 'top 80%'
+          },
+          y: 50,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: 'power3.out'
+        });
+
+        // About section animation
+        gsap.from('.about-text > *', {
+          scrollTrigger: {
+            trigger: '.about-content',
+            start: 'top 80%'
+          },
+          x: -50,
+          duration: 0.8,
+          stagger: 0.2
+        });
+
+        gsap.from('.about-image', {
+          scrollTrigger: {
+            trigger: '.about-content',
+            start: 'top 80%'
+          },
+          x: 50,
+          duration: 0.8
+        });
+
+        // Contact section animation
+        gsap.from('#contact .fade-in', {
+          scrollTrigger: {
+            trigger: '#contact',
+            start: 'top 80%'
+          },
+          y: 30,
+          duration: 0.8,
+          stagger: 0.2
+        });
+      }
+
+      // Add parallax effect to hero image if desired
+      const heroImage = document.querySelector('.hero-image img');
+      if (heroImage) {
+        window.addEventListener('scroll', function() {
+          const scrollPosition = window.pageYOffset;
+          heroImage.style.transform = `translateY(${scrollPosition * 0.4}px)`;
+        });
+      }
+
+      // Form submission handler (if contact form exists)
+      const contactForm = document.querySelector('form');
+      if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+
+          // Simulate form submission
+          const submitButton = contactForm.querySelector('button[type="submit"]');
+          if (submitButton) {
+            const originalText = submitButton.textContent;
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+
+            // Simulate API call
+            setTimeout(() => {
+              const formFields = contactForm.querySelectorAll('input, textarea');
+              formFields.forEach(field => field.value = '');
+
+              // Show success message
+              const successMessage = document.createElement('div');
+              successMessage.className = 'success-message';
+              successMessage.textContent = 'Thank you! Your message has been sent successfully.';
+              successMessage.style.color = '#4CAF50';
+              successMessage.style.padding = '1rem 0';
+              successMessage.style.fontWeight = 'bold';
+
+              contactForm.appendChild(successMessage);
+
+              submitButton.textContent = originalText;
+              submitButton.disabled = false;
+
+              // Remove success message after 5 seconds
+              setTimeout(() => {
+                successMessage.remove();
+              }, 5000);
+            }, 1500);
+          }
+        });
+      }
+
+      // Add image loading animations
+      const images = document.querySelectorAll('img');
+      images.forEach(img => {
+        img.addEventListener('load', function() {
+        });
+      });
+
+      // Run initial animation check to show elements in viewport on page load
+      setTimeout(animateOnScroll, 100);
+
+      // Add preloader if desired
+      const addPreloader = () => {
+        const preloader = document.createElement('div');
+        preloader.className = 'preloader';
+        preloader.innerHTML = `
+          <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
           </div>
         `;
-        
-        aboutSection.parentNode.insertBefore(blogsSection, aboutSection.nextSibling);
-      }
-    }
-  };
-  
-  // Call the function to add missing content
-  addMissingContent();
-  
-  // Header scroll effect
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-    
-    // Back to top button visibility
-    if (window.scrollY > 300) {
-      backToTopButton.classList.add('visible');
-    } else {
-      backToTopButton.classList.remove('visible');
-    }
-    
-    // Check for elements to animate on scroll
-    animateOnScroll();
-  });
-  
-  // Mobile menu toggle
-  mobileMenuToggle.addEventListener('click', function() {
-    mobileMenu.classList.toggle('active');
-    
-    // Transform hamburger to X
-    const spans = mobileMenuToggle.querySelectorAll('span');
-    if (mobileMenu.classList.contains('active')) {
-      spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-      spans[1].style.opacity = '0';
-      spans[2].style.transform = 'rotate(-45deg) translate(7px, -7px)';
-      // Prevent scrolling when menu is open
-      document.body.style.overflow = 'hidden';
-    } else {
-      spans[0].style.transform = 'none';
-      spans[1].style.opacity = '1';
-      spans[2].style.transform = 'none';
-      // Allow scrolling when menu is closed
-      document.body.style.overflow = 'auto';
-    }
-  });
-  
-  // Close mobile menu when clicking a link
-  mobileLinks.forEach(link => {
-    link.addEventListener('click', function() {
-      mobileMenu.classList.remove('active');
-      const spans = mobileMenuToggle.querySelectorAll('span');
-      spans[0].style.transform = 'none';
-      spans[1].style.opacity = '1';
-      spans[2].style.transform = 'none';
-      document.body.style.overflow = 'auto';
-    });
-  });
-  
-  // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-      
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        // Calculate header height to offset scroll position
-        const headerHeight = header.offsetHeight;
-        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-        
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-        });
-      }
-    });
-  });
-  
-  // Animation on scroll
-  function animateOnScroll() {
-    const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
-    
-    animatedElements.forEach(element => {
-      const elementPosition = element.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
-      const delay = element.getAttribute('data-delay') || 0;
-      
-      if (elementPosition < windowHeight - 100) {
-        setTimeout(() => {
-          element.classList.add('visible');
-        }, delay);
-      }
-    });
-  }
-  
-  // Initialize AOS animation library if available
-  if (typeof AOS !== 'undefined') {
-    AOS.init({
-      duration: 800,
-      offset: 100,
-      once: true
-    });
-  }
-  
-  // Initialize GSAP animations if available
-  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-    // Register ScrollTrigger plugin
-    gsap.registerPlugin(ScrollTrigger);
-    
-    // Hero section animations
-    gsap.from('.hero-title', {
-      duration: 1,
-      y: 50,
-      ease: 'power3.out'
-    });
-    
-    gsap.from('.hero-description', {
-      duration: 1,
-      y: 30,
-      delay: 0.3,
-      ease: 'power3.out'
-    });
-    
-    gsap.from('.hero-features', {
-      duration: 1,
-      y: 30,
-      delay: 0.5,
-      ease: 'power3.out'
-    });
-    
-    gsap.from('.hero-cta', {
-      duration: 1,
-      y: 30,
-      delay: 0.7,
-      ease: 'power3.out'
-    });
-    
-    // Section titles animation
-    gsap.utils.toArray('.section-title').forEach(title => {
-      gsap.from(title, {
-        scrollTrigger: {
-          trigger: title,
-          start: 'top 80%'
-        },
-        y: 30,
-        duration: 0.8
-      });
-    });
-    
-    // Service cards staggered animation
-    gsap.from('.service-card', {
-      scrollTrigger: {
-        trigger: '.service-grid',
-        start: 'top 80%'
-      },
-      y: 50,
-      duration: 0.8,
-      stagger: 0.2,
-      ease: 'power3.out'
-    });
-    
-    // Testimonial cards staggered animation
-    gsap.from('.testimonial-card', {
-      scrollTrigger: {
-        trigger: '.testimonial-grid',
-        start: 'top 80%'
-      },
-      y: 50,
-      duration: 0.8,
-      stagger: 0.15,
-      ease: 'power3.out'
-    });
-    
-    // About section animation
-    gsap.from('.about-text > *', {
-      scrollTrigger: {
-        trigger: '.about-content',
-        start: 'top 80%'
-      },
-      x: -50,
-      duration: 0.8,
-      stagger: 0.2
-    });
-    
-    gsap.from('.about-image', {
-      scrollTrigger: {
-        trigger: '.about-content',
-        start: 'top 80%'
-      },
-      x: 50,
-      duration: 0.8
-    });
-    
-    // Contact section animation
-    gsap.from('#contact .fade-in', {
-      scrollTrigger: {
-        trigger: '#contact',
-        start: 'top 80%'
-      },
-      y: 30,
-      duration: 0.8,
-      stagger: 0.2
-    });
-  }
-  
-  // Add parallax effect to hero image if desired
-  const heroImage = document.querySelector('.hero-image img');
-  if (heroImage) {
-    window.addEventListener('scroll', function() {
-      const scrollPosition = window.pageYOffset;
-      heroImage.style.transform = `translateY(${scrollPosition * 0.4}px)`;
-    });
-  }
-  
-  // Form submission handler (if contact form exists)
-  const contactForm = document.querySelector('form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Simulate form submission
-      const submitButton = contactForm.querySelector('button[type="submit"]');
-      if (submitButton) {
-        const originalText = submitButton.textContent;
-        submitButton.textContent = 'Sending...';
-        submitButton.disabled = true;
-        
-        // Simulate API call
-        setTimeout(() => {
-          const formFields = contactForm.querySelectorAll('input, textarea');
-          formFields.forEach(field => field.value = '');
-          
-          // Show success message
-          const successMessage = document.createElement('div');
-          successMessage.className = 'success-message';
-          successMessage.textContent = 'Thank you! Your message has been sent successfully.';
-          successMessage.style.color = '#4CAF50';
-          successMessage.style.padding = '1rem 0';
-          successMessage.style.fontWeight = 'bold';
-          
-          contactForm.appendChild(successMessage);
-          
-          submitButton.textContent = originalText;
-          submitButton.disabled = false;
-          
-          // Remove success message after 5 seconds
-          setTimeout(() => {
-            successMessage.remove();
-          }, 5000);
-        }, 1500);
-      }
-    });
-  }
-  
-  // Add image loading animations
-  const images = document.querySelectorAll('img');
-  images.forEach(img => {
-    img.addEventListener('load', function() {
-    });
-  });
-  
-  // Run initial animation check to show elements in viewport on page load
-  setTimeout(animateOnScroll, 100);
-  
-  // Add preloader if desired
-  const addPreloader = () => {
-    const preloader = document.createElement('div');
-    preloader.className = 'preloader';
-    preloader.innerHTML = `
-      <div class="spinner">
-        <div class="bounce1"></div>
-        <div class="bounce2"></div>
-        <div class="bounce3"></div>
-      </div>
-    `;
-    
-    document.addEventListener('DOMContentLoaded', function() {
-  // Function to check if element is in viewport
-  function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return (
-      rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
-      rect.bottom >= 0
-    );
-  }
-  
-  // Function to handle scroll animations
-  function handleScrollAnimations() {
-    const animatedElements = document.querySelectorAll('.slide-in-left');
-    
-    animatedElements.forEach(element => {
-      if (isInViewport(element)) {
-        element.classList.add('animate');
-      }
-    });
-  }
-  
-  // Run on page load
- /// handleScrollAnimations();
-  
-  // Run on scroll
-  window.addEventListener('scroll', handleScrollAnimations);
-});
 
-    // Add preloader styles
-    const style = document.createElement('style');
-    style.textContent = `
-      .preloader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: var(--primary-color);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-        transition: visible;
-      }
-      .spinner {
-        width: 70px;
-        text-align: center;
-      }
-      .spinner > div {
-        width: 18px;
-        height: 18px;
-        background-color: var(--accent-color);
-        border-radius: 100%;
-        display: inline-block;
-        animation: sk-bouncedelay 1.4s infinite ease-in-out both;
-        margin: 0 3px;
-      }
-      .spinner .bounce1 {
-        animation-delay: -0.32s;
-      }
-      .spinner .bounce2 {
-        animation-delay: -0.16s;
-      }
-      @keyframes sk-bouncedelay {
-        0%, 80%, 100% { transform: scale(0); }
-        40% { transform: scale(1.0); }
-      }
-    `;
-    
-    document.head.appendChild(style);
-    document.body.appendChild(preloader);
-    
-    // Hide preloader once page is loaded
-    window.addEventListener('load', function() {
-      setTimeout(() => {
-        preloader.style.visibility = 'hidden';
-        
-        // Remove preloader after transition
-        setTimeout(() => {
-          preloader.remove();
-        }, 500);
-      }, 500);
+        document.addEventListener('DOMContentLoaded', function() {
+          // Function to check if element is in viewport
+          function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+              rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+              rect.bottom >= 0
+            );
+          }
+
+          // Function to handle scroll animations
+          function handleScrollAnimations() {
+            const animatedElements = document.querySelectorAll('.slide-in-left');
+
+            animatedElements.forEach(element => {
+              if (isInViewport(element)) {
+                element.classList.add('animate');
+              }
+            });
+          }
+
+          // Run on page load
+          handleScrollAnimations();
+
+          // Run on scroll
+          window.addEventListener('scroll', handleScrollAnimations);
+        });
+
+        // Add preloader styles
+        const style = document.createElement('style');
+        style.textContent = `
+          .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: visible;
+          }
+          .spinner {
+            width: 70px;
+            text-align: center;
+          }
+          .spinner > div {
+            width: 18px;
+            height: 18px;
+            background-color: var(--accent-color);
+            border-radius: 100%;
+            display: inline-block;
+            animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+            margin: 0 3px;
+          }
+          .spinner .bounce1 {
+            animation-delay: -0.32s;
+          }
+          .spinner .bounce2 {
+            animation-delay: -0.16s;
+          }
+          @keyframes sk-bouncedelay {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1.0); }
+          }
+        `;
+
+        document.head.appendChild(style);
+        document.body.appendChild(preloader);
+
+        // Hide preloader once page is loaded
+        window.addEventListener('load', function() {
+          setTimeout(() => {
+            preloader.style.visibility = 'hidden';
+
+            // Remove preloader after transition
+            setTimeout(() => {
+              preloader.remove();
+            }, 500);
+          }, 500);
+        });
+      };
+
+      // Add preloader
+      addPreloader();
     });
-  };
-  
-  // Add preloader
-  addPreloader();
-});
   </script>
-  </body></html>
-  
+</body>
+</html>
